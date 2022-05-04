@@ -1,0 +1,9 @@
+// 폰트, 이미지 경로 수정
+$font-path: "/src/style-core/fonts/";
+
+// IRIS-Design-Core 레파지토리의 스타일
+@import "/src/style-core/scss/core-index";
+
+// UI-Solution-Pub 레파지토리의 스타일
+@import "./components/components.scss";
+@import "./layout/layout.scss";

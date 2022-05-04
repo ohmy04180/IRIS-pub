@@ -1,0 +1,4 @@
+[submodule "src/style-core"]
+	path = src/style-core
+	url = https://github.com/mobigen/IRIS-Design-Core.git
+	branch = iris--design-layout
