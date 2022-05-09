@@ -6,11 +6,245 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>환경 설정 페이지</title>
   <link rel="stylesheet" href="../dist/css/style.min.css" />
+
 </head>
 
 <body>
 
-  <h1>환경설정 페이지</h1>
+  <nav>
+    <div class="top">
+      <div class="top-gnb">
+        <a href="#">LOGO 관리</a>
+        <ul>
+          <li>작업조회</li>
+          <li>
+            사용자관리
+            <svg style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </li> 
+          <li>메뉴관리</li>
+          <li>환경설정 </li>
+        </ul>
+      </div>
+      
+      <div class="top-toolbar">
+        <ul class="top-toolbar-items">
+
+          <li class="top-toolbar-items__move">
+            <span class="top-toolbar-items__move-left">
+              <svg style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 32">
+                <path fill-rule="evenodd" d="M21.665 4.253a1 1 0 01.082 1.412L11.351 16.23l10.381 10.09a1 1 0 01-1.464 1.36l-11-10.755a1 1 0 01-.015-1.345l11-11.245a1 1 0 011.412-.082z" clip-rule="evenodd"/>
+              </svg>
+            </span>
+            <span class="top-toolbar-items__move-right">
+              <svg style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 32">
+                <path fill-rule="evenodd" d="M9.335 27.747a1 1 0 01-.082-1.412L19.648 15.77 9.268 5.68a1 1 0 111.464-1.36l11 10.755a1 1 0 01.015 1.345l-11 11.245a1 1 0 01-1.412.082z" clip-rule="evenodd"/>
+              </svg>
+            </span>
+          </li>
+
+          
+          <li class="top-toolbar-items__helf-outline">
+            <svg style="fill:#fff;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+              <path d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z"/>
+              <path fill-rule="evenodd" d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z" clip-rule="evenodd"/>
+            </svg>
+          </li>
+
+          <li class="top-toolbar-items__global">
+            <svg style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M16 28c6.627 0 12-5.373 12-12S22.627 4 16 4 4 9.373 4 16s5.373 12 12 12zm0 2c7.732 0 14-6.268 14-14S23.732 2 16 2 2 8.268 2 16s6.268 14 14 14z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M18.688 25.037C19.751 22.812 20.5 19.615 20.5 16c0-3.615-.749-6.812-1.812-9.037-.533-1.115-1.107-1.908-1.634-2.396C16.527 4.08 16.17 4 16 4c-.17 0-.527.079-1.054.567-.527.488-1.101 1.28-1.634 2.396C12.249 9.188 11.5 12.385 11.5 16c0 3.615.749 6.812 1.812 9.037.533 1.115 1.107 1.908 1.634 2.396.527.488.885.567 1.054.567.17 0 .527-.079 1.054-.567.527-.488 1.101-1.28 1.634-2.396zM16 30c3.314 0 6.5-6.268 6.5-14S19.314 2 16 2 9.5 8.268 9.5 16s3.186 14 6.5 14z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M28 13H3v-2h25v2zM28 21H3v-2h25v2z" clip-rule="evenodd"/>
+            </svg>
+            <span>한국어</span> 
+            <svg style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 32 32">
+              <path fill-rule="evenodd" d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </li>
+         
+          <li class="top-toolbar-items__app-switcher" >
+            <span>root</span>
+            <svg style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32">
+              <path d="M4 4h5v5H4V4zM4 13.5h5v5H4v-5zM4 23h5v5H4v-5zM13.5 4h5v5h-5V4zM13.5 13.5h5v5h-5v-5zM13.5 23h5v5h-5v-5zM23 4h5v5h-5V4zM23 13.5h5v5h-5v-5zM23 23h5v5h-5v-5z"/>
+            </svg>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="component-examle__item-group component-examle__item-group--not-full">
+    <div class="breadcrumb" role="navigation" aria-label="Main">
+      <span class="breadcrumb__text"> 환경설정 </span>
+      <span class="breadcrumb__text"> 기본설정 </span>
+    </div>
+  </div>
+  <div class="index-layout-head__title-bar">
+    <p>기본 설정</p>
+  </div>
+  <div class="setting"><!--컨테이너박스-->
+    <div class="setting-left-menu"><!--왼쪽컨테이너-->
+    <ul>
+      <li>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" fill="#77889A">
+            <path fill-rule="evenodd" d="M12.506 15a5.501 5.501 0 005.503-5.5c0-3.038-2.464-5.5-5.503-5.5a5.501 5.501 0 00-2.358 10.472c.712.338 1.51.528 2.358.528zm0 2a7.502 7.502 0 007.504-7.5c0-4.142-3.36-7.5-7.504-7.5a7.5 7.5 0 100 15z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M12.483 15.79a1 1 0 01-.768 1.188 10.476 10.476 0 00-5.882 3.562c-1.347 1.628-1.91 3.33-1.834 4.389a1 1 0 01-1.997.142c-.124-1.744.743-3.937 2.288-5.805a12.477 12.477 0 017.005-4.244 1 1 0 011.188.768zM21.761 17l-.28.959a1.1 1.1 0 01-.498.64l-1.18.694a1.1 1.1 0 01-.855.111l-.98-.275-.692 1.13.903.885c.211.206.33.49.33.785v1.142a1.1 1.1 0 01-.33.785l-.903.886.691 1.129.981-.275a1.1 1.1 0 01.856.111l1.18.694a1.1 1.1 0 01.498.64l.279.959h1.473l.297-1.164a1.1 1.1 0 01.582-.716l.92-.452c.27-.132.583-.148.865-.044l1.157.425.715-1.284-.927-.909a1.1 1.1 0 01-.33-.785V21.93a1.1 1.1 0 01.33-.785l.903-.886-.704-1.15-1.245.305a1.1 1.1 0 01-.915-.183l-.936-.688a1.1 1.1 0 01-.404-.578l-.28-.964H21.76zm-1.732-1.208A1.1 1.1 0 0121.085 15h2.852c.49 0 .92.323 1.056.792l.385 1.32.35.258 1.476-.361a1.1 1.1 0 011.201.494l1.422 2.323a1.1 1.1 0 01-.169 1.359l-1.144 1.122v.386l1.147 1.125a1.1 1.1 0 01.191 1.32l-1.422 2.556a1.101 1.101 0 01-1.342.498l-1.519-.559-.201.1L25 29.171a1.1 1.1 0 01-1.067.828h-2.849a1.1 1.1 0 01-1.056-.792l-.369-1.264-.541-.319-1.268.355a1.1 1.1 0 01-1.236-.485l-1.42-2.32a1.1 1.1 0 01.169-1.36l1.144-1.122v-.386l-1.144-1.122a1.1 1.1 0 01-.169-1.36l1.42-2.32a1.1 1.1 0 011.236-.485l1.268.355.541-.319.369-1.264z" clip-rule="evenodd"/>
+            <path d="M24.512 22.5a2 2 0 11-4-.001 2 2 0 014 .001z"/>
+          </svg>
+        </span>
+        <span class="setting-left-menu__non-selected">일반설정</span>
+        </li>
+      <li>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" fill="#005ACD">
+            <path fill-rule="evenodd" d="M12.561 21.517a6.18 6.18 0 003.434 1.042 6.118 6.118 0 006.18-6.18 6.18 6.18 0 10-9.614 5.138zm1.842-8.97a4.03 4.03 0 011.592-.288 4.03 4.03 0 014.12 4.12 4.026 4.026 0 01-4.12 4.12 4.03 4.03 0 01-4.12-4.12 4.028 4.028 0 012.528-3.832z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M27.325 17.162l1.946 1.782a2.06 2.06 0 01.422 2.585l-2.348 4.12a2.06 2.06 0 01-1.782 1.03 2.055 2.055 0 01-.659-.103l-2.492-.845c-.436.288-.89.546-1.36.773l-.525 2.595a2.06 2.06 0 01-2.06 1.659h-4.862a2.06 2.06 0 01-2.06-1.659l-.525-2.595a11.671 11.671 0 01-1.35-.773l-2.502.845c-.213.07-.436.105-.66.103a2.059 2.059 0 01-1.781-1.03l-2.431-4.12a2.06 2.06 0 01.422-2.627l1.947-1.73v-1.576l-1.947-1.782a2.06 2.06 0 01-.422-2.585l2.43-4.12a2.06 2.06 0 011.782-1.03 2.06 2.06 0 01.66.062l2.451.886c.436-.287.89-.546 1.36-.773l.525-2.595A2.06 2.06 0 0113.564 2h4.82a2.06 2.06 0 012.06 1.659l.526 2.595c.466.228.917.486 1.349.773l2.503-.845a2.06 2.06 0 01.659-.103 2.06 2.06 0 011.782 1.03l2.43 4.12a2.06 2.06 0 01-.39 2.627l-1.979 1.73v1.576zm-5.377 6.262l3.533 1.195 2.43-4.12-2.8-2.544a9.169 9.169 0 000-3.224l2.8-2.472-2.43-4.12-3.543 1.154a9.641 9.641 0 00-2.781-1.617l-.732-3.657h-4.861l-.731 3.698a9.125 9.125 0 00-2.792 1.617L6.508 8.139l-2.43 4.12 2.801 2.544a9.167 9.167 0 000 3.224l-2.801 2.472 2.43 4.12 3.544-1.154c.83.691 1.77 1.238 2.78 1.617l.732 3.657h4.861l.732-3.698a9.125 9.125 0 002.791-1.617z" clip-rule="evenodd"/>
+          </svg>
+        </span> 
+        <span class="setting-left-menu__selected">시스템설정</span>
+      </li>
+    </ul>
+    </div>
+    <div class="setting-right-menu"><!--오른쪽컨테이너-->
+      <div class="setting-right-menu-notification-wrap">
+        <div class="notification notification--info" role="alert" >
+          <svg class="notification__icon svg-icon" aria-hidden="true">
+            <use xlink:href="#info-fill"></use>
+          </svg>
+          <div class="notification__contents">
+            <p class="notification__title">시스템 설정은 서버를 재시작해야만 적용 됩니다.<br>
+            서버 재시작 중, IRIS 사용이 중단되며 저장하지 않은 데이터는 삭제 됩니다. 문제 발생 시, 담당자에게 연락바랍니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component">
+        <div class="component-example__live">
+          <div>
+            <div class="component-example__row1">
+              <div class="component-examle__item-group">
+                <form class="form form--lg form--vertical">
+                  <div class="form__body">
+                    <div class="form__list">
+                      <div class="form__item">
+                        <label class="form__label">
+                          <span class="form__label-text1">
+                            Brick 주소
+                          </span>
+                        </label>
+                        <div class="form__detail">
+                          <input type="text" class="text-input text-input--lg" placeholder="http://brick-svc:8080">
+                        </div>
+                      </div>
+                      <div class="form__item">
+                        <label class="form__label">
+                          <span class="form__label-text1">
+                            Docker 서비스 주소
+                          </span>
+                        </label>
+                        <div class="form__detail">
+                          <input type="text" class="text-input text-input--lg" placeholder="http://docker-svc">
+                        </div>
+                      </div>
+                      <div class="form__item">
+                        <label class="form__label">
+                          <span class="form__label-text1">
+                            Brick 인증 API 주소
+                          </span>
+                        </label>
+                        <div class="form__detail">
+                          <input type="text" class="text-input text-input--lg" placeholder="authenticate">
+                        </div>
+                      </div>
+                      <div class="form__item" style="margin-bottom: 32px;">
+                        <label class="form__label">
+                          <span class="form__label-text1">
+                            Playground API 주소
+                          </span>
+                        </label>
+                        <div class="form__detail">
+                          <input type="text" class="text-input text-input--lg" placeholder="/api/event">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="component-example__row2">
+                    <div class="component-examle__item-group">
+                      <form class="form form--lg">
+                        <div class="form__head">
+                          <strong class="form__head-title">
+                            데이터 소스 연동 정보
+                          </strong>
+                        </div>
+                        <div class="form__body">
+                          <div class="form__list">
+                            <div class="form__item" ><!--display:flex안먹음-->
+                              <label class="form__label">
+                                <span class="form__label-text2">
+                                  URL
+                                  <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
+                                    <use xlink:href="#help-outline"></use>
+                                  </svg>
+                                </span>
+                              </label>
+                              <div class="form__detail">
+                                <input type="text" class="text-input text-input--lg" placeholder="">
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <label class="form__label">
+                                <span class="form__label-text2">
+                                  Username
+                                  <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
+                                    <use xlink:href="#help-outline"></use>
+                                  </svg>
+                                </span>
+                              </label>
+                              <div class="form__detail">
+                                <input type="text" class="text-input text-input--lg" placeholder="">
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <label class="form__label">
+                                <span class="form__label-text2">
+                                  password
+                                  <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
+                                    <use xlink:href="#help-outline"></use>
+                                  </svg>
+                                </span>
+                              </label>
+                              <div class="form__detail">
+                                <input type="text" class="text-input text-input--lg" placeholder="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                
+                </form>
+                <div class="form__foot">
+                  <button class="button button--danger button--lg" type="button">초기화</button>
+                  <div class="form__foot-main-buttons">
+                    <button class="button button--primary button--lg" type="button">
+                      <span class="button__text"> 적용 및 서버 재시작 </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="../dist/js/main.bundle.js"></script>
 </body>
 
