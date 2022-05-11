@@ -21,11 +21,11 @@ body{
 }
 
 header{
-    background:$primary-color;
+    
     min-width :1000px;
-    height:46px;
 }    
 .top{
+    background:$primary-color;
     height:46px;
     padding: 0 20px;
     display:flex;
@@ -110,16 +110,18 @@ header{
 .top-toolbar-items__app-switche-text{
     margin:0 8px;                 
  }
-               
+           
 
 
-.breadcrumb-titlebox{
+.titlebox{
     width:100%;
     height:56px;
     box-shadow:$overlay-shadow;
     padding-left: 20px;
+    margin-top: 28px;
+
 }
-.breadcrumb-titlebox__title{
+.titlebox__title{
     font-size: 18px;
     padding:14px 0;
     font-weight:bold;
