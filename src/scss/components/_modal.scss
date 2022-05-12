@@ -1,0 +1,390 @@
+//변수선언
+$primary-color: #005ACD;
+$secondary-color: #4daeff;
+$third-color: #1a6cd6;
+$ui-01-color: #f7f9fc;
+$ui-02-color: #fff;
+$ui-04-color: #DCE1E8;
+$text-01-color: #212121;
+$text-02-color: #606974;
+$text-03-color: #77889a;
+$link-text-color: #606974;
+$hover-ui: #f0f3f6;
+$point-color: #ef594f;
+
+$spacing-3xs: 2px;
+$spacing-2xs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 36px;
+$spacing-3xl: 48px;
+
+$font-sm: 12px;
+$font-md: 14px;
+$font-lg: 15px;
+$font-h5: 16px;
+$font-h4: 18px;
+$font-h3: 20px;
+
+$rasied-shadow: 0 2px 2px 0 rgba(206, 211, 233, 0.2);
+$overlay-shadow: 0 2px 8px 0 rgba(206, 211, 233, 0.2);
+
+@mixin dash-togglebox {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 0;
+    margin-right: $spacing-2xs;
+}
+@mixin link-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: $spacing-3xs;
+    .badge--cyan {
+        display: inline-block;
+    }
+}
+@mixin modal-helpbox {
+    height: 68px;
+    padding: 0;
+    .modal__body--sm-help-box {
+        display: flex;
+        justify-content: space-between;
+        padding-top: $spacing-xs;
+        .modal-help-icon {
+            fill: $text-03-color;
+        }
+        .help-box__text {
+            color: $text-03-color;
+        }
+    }
+}
+@mixin modal-togglebox {
+    height: 62px;
+    padding: $spacing-xl 0 0;
+    .toggle-box {
+        display: flex;
+        justify-content: end;
+        padding-bottom: $spacing-xs;
+        .toggle-text {
+            margin-right: $spacing-3xs;
+        }
+    }
+}
+
+//한번 해봤습니당..
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 1000px;
+    background-color: $ui-01-color;
+}
+
+.top {
+    background: $primary-color;
+    height: 46px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-gnb {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.top-gnb__logo {
+    margin-bottom: 8px;
+}
+.top-gnb__logo-link {
+    color: $ui-02-color;
+    text-decoration: none;
+    display: inline-block;
+    height: 46px;
+    font-size: 16px;
+    padding: 16px 0 0;
+    &:hover {
+        color: $ui-02-color;
+    }
+}
+.top-gnb__logo-sub {
+    border-right: 1px solid $secondary-color;
+    font-size: 15px;
+    color: $ui-02-color;
+    padding-right: 50px;
+    font-weight: normal;
+}
+
+.top-gnb__menu-box {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.top-gnb__menu-box-list {
+    &:nth-child(1) {
+        padding-left: 0;
+    }
+    &:nth-child(4) {
+        position: relative;
+        &::before {
+            //안먹음..
+            content: "";
+            position: absolute;
+            top: 30px;
+            width: calc(100% - 32px);
+            height: 3px;
+            color: $secondary-color;
+            z-index: 100;
+        }
+    }
+}
+.top-gnb__menu-link {
+    text-decoration: none;
+    color: $ui-02-color;
+    display: inline-block;
+    width: 100px;
+    height: 46px;
+    padding-top: 12px;
+    text-align: center;
+    &:hover {
+        color: $ui-02-color;
+    }
+}
+.top-toolbar-items {
+    display: flex;
+    align-items: center;
+}
+.top-toolbar-items__button {
+    background-color: $primary-color;
+    border: none;
+    cursor: pointer;
+    height: 46px;
+    padding: 0 18px;
+}
+
+.top-toolbar-items__move {
+    background-color: $third-color;
+}
+
+.top-toolbar-items__move-button {
+    background-color: $third-color;
+    border: none;
+    height: 46px;
+    padding: 0 6px;
+}
+
+.top-toolbar-items__app-switcher,
+.top-toolbar-items__global {
+    display: flex;
+    align-items: center;
+    color: $ui-02-color;
+    font-size: 14px;
+}
+.top-toolbar-items__global {
+    padding: 0;
+    span {
+        margin-left: 8px;
+    }
+}
+.top-toolbar-items__app-switche-text {
+    margin: 0;
+    color: $ui-02-color;
+}
+.top-toolbar-items__switcher-button {
+    background-color: $primary-color;
+    height: 46px;
+    padding-left: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    span {
+        margin-right: 8px;
+    }
+}
+
+.container {
+    width: 100%;
+    background-color: $ui-01-color;
+}
+.container__blank-white {
+    width: 100%;
+    height: 56px;
+    background-color: $ui-02-color;
+}
+.container-head {
+    text-align: center;
+}
+.container-head__checkbox {
+    padding: $spacing-md 0;
+}
+.container-body {
+    width: calc(100% - 20px);
+    height: 100vh;
+    margin: 0 auto;
+    background-color: $hover-ui;
+}
+.container-body-box {
+    position: relative;
+    display: flex;
+}
+
+.container-body-box__select {
+    position: absolute;
+    width: 250px;
+    padding: 8px 0;
+    background-color: $ui-02-color;
+    box-shadow: $rasied-shadow;
+    left: 2%;
+    transform: translateY(50%);
+}
+.button--lg-common {
+    width: 100%;
+    padding: 4px 0 0 4px;
+    display: block;
+    text-align: left;
+}
+.button--lg-dashboard {
+    width: 60%;
+    text-align: left;
+    padding: 4px 0 0 4px;
+    display: block;
+}
+.button--lg-change {
+    
+    
+    text-align: right;
+    padding: 4px 0 0 4px;
+}
+
+.button--lg-export {
+    width: 100%;
+    padding: 4px 0 0 4px;
+    display: block;
+    text-align: left;
+}
+.select-button__text--choise {
+    color: $primary-color;
+}
+
+.select-icon {
+    width: 20px;
+}
+.change-icon {
+    width: 20px;
+}
+.select-button__text {
+    font-size: $font-md;
+}
+
+.select--dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.select__toggle-box {
+    @include dash-togglebox;
+}
+.select__toggle-button {
+    width: 40px;
+    height: 20px;
+    padding: 1px;
+}
+
+.toggle-badge--sm {
+    display: inline-block;
+    width: 36px;
+    margin-left: $spacing-3xs;
+}
+
+.export-icon {
+    fill: $primary-color;
+}
+
+.container-body-box-modal1 {
+    position: absolute;
+    left: 20%;
+    transform: translateY(60px);
+}
+.modal {
+    width: 620px;
+}
+
+.modal__body {
+    padding: 0 $spacing-xl;
+}
+.modal__body--sm-toggle {
+    @include modal-togglebox;
+}
+.modal__body--sm-link {
+
+    background-color: $ui-01-color;
+    padding: 0 $spacing-md;
+}
+.link-box {
+    text-align: left;
+    border-bottom: 1px solid $ui-04-color;
+    &:last-child {
+        border-bottom: none;
+    }
+}
+.link-box__title {
+    font-weight: 500;
+    font-size: $font-lg;
+    padding: $spacing-md 0;
+}
+
+.link-box__content--cyan {
+    @include link-grid;
+}
+
+.modal__body--sm-help {
+
+    @include modal-helpbox;
+}
+
+.container-body-box-modal2 {
+    position: absolute;
+    left: 60%;
+    transform: translateY(60px);
+}
+.modal {
+    width: 620px;
+}
+
+.modal__body {
+    padding: 0 $spacing-xl;
+}
+.modal__body--sm-toggle {
+    @include modal-togglebox;
+}
+.modal__body--sm-link {
+
+    background-color: $ui-01-color;
+    padding: 0 $spacing-md;
+}
+
+.link-box__content--cyan,
+.link-box__content--teal {
+    margin-bottom: $spacing-sm;
+}
+.badge--teal {
+    display: inline-block;
+}
+.link-box__content--cyan {
+    @include link-grid;
+}
+.badge--cyan-link {
+    word-break: break-all;
+}
+
+.modal__body--sm-help {
+    @include modal-helpbox;
+}
