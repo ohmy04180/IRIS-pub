@@ -47,8 +47,17 @@ body{
     display: inline-block;
     height: 46px;
     font-size:16px;
+    padding:16px 0 0 0;  
+    &:hover{
+        color:$ui-02-color;
+    }
+}
+.top-gnb__logo-sub{
     border-right:1px solid $secondary-color;
-    padding:16px 100px 0 0;  
+    font-size: 15px;
+    color: $ui-02-color;
+    padding-right: 50px;
+    font-weight: normal;
 }
             
  .top-gnb__menu-box{
@@ -107,8 +116,7 @@ body{
     height: 46px;
     padding: 0 6px;
 } 
-.top-toolbar-items__helf-outline{
-}
+
 .top-toolbar-items__global,.top-toolbar-items__app-switcher{
     display:flex;
     align-items: center;
@@ -145,8 +153,6 @@ body{
     height:56px;
     box-shadow:$overlay-shadow;
     padding-left: 20px;
-    margin-top: 28px;
-
 }
 .titlebox__title{
     font-size: 18px;
