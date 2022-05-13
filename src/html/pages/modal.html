@@ -155,18 +155,18 @@
                 </div>
                 <div class="container-body">
                     <div class="container-body-box">
-                        <div class="container-body-box__select">
+                        <div class="context-menu">
                             <!--첫번째-->
-                            <div class="select--dashboard">
+                            <div class="context-menu--dashboard">
                                 <button class="button button--link button--lg-dashboard" type="button">
-                                    <svg class="svg-icon select-icon" aria-hidden="true">
+                                    <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                         <use xlink:href="#dashboard-menu"></use>
                                     </svg>
-                                    <span class="select-button__text">대시보드 사용여부</span>
+                                    <span class="context-menu-button__text">대시보드 사용여부</span>
                                 </button>
-                                <div class="select__toggle-box">
+                                <div class="context-menu__toggle-box">
                                     <button
-                                        class="toggle-switch__switch toggle-switch__switch--selected select__toggle-button"
+                                        class="toggle-switch__switch toggle-switch__switch--selected context-menu__toggle-button"
                                         type="button"
                                         aria-selected="true">
                                         <span class="toggle-switch__handle"></span>
@@ -178,28 +178,28 @@
                             </div>
 
                             <button class="button button--link button--lg-common" type="button">
-                                <svg class="svg-icon select-icon" aria-hidden="true">
+                                <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                     <use xlink:href="#template"></use>
                                 </svg>
-                                <span class="select-button__textt">탬플릿으로 등록</span>
+                                <span class="context-menu-button__text">탬플릿으로 등록</span>
                             </button>
                             <button class="button button--link button--lg-common" type="button">
-                                <svg class="svg-icon select-icon" aria-hidden="true">
+                                <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                     <use xlink:href="#key"></use>
                                 </svg>
-                                <span class="select-button__text">권한설정</span>
+                                <span class="context-menu-button__text">권한설정</span>
                             </button>
                             <button class="button button--link button--lg-common" type="button">
-                                <svg class="svg-icon select-icon" aria-hidden="true">
+                                <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                     <use xlink:href="#user-setting"></use>
                                 </svg>
-                                <span class="select-button__text">소유자 설정</span>
+                                <span class="context-menu-button__text">소유자 설정</span>
                             </button>
                             <button class="button button--link button--lg-export" type="button">
                                 <svg style="fill:#005ACD" class="svg-icon export-icon" aria-hidden="true">
                                     <use xlink:href="#url-export"></use>
                                 </svg>
-                                <span class="select-button__text--choise">내보내기 링크</span>
+                                <span class="context-menu-button__text--choise">내보내기 링크</span>
                             </button>
                             <button
                                 class="button button--link button--lg-change"
@@ -220,26 +220,26 @@
                                         d="M17.293 7.793a1 1 0 011.414 0l6.5 6.5a1 1 0 01.255.432l1 3.5a1 1 0 01-.255.982l-4.5 4.5a1 1 0 01-1.414-1.414l4.084-4.084-.767-2.685-6.317-6.317a1 1 0 010-1.414zM4.822 19.765a1 1 0 011.413.057l6 6.5a1 1 0 01-1.47 1.356l-6-6.5a1 1 0 01.057-1.413z"
                                         clip-rule="evenodd"/>
                                 </svg>
-                                <span class="select-button__text">
+                                <span class="context-menu-button__text">
                                     정보 변경</span>
                             </button>
                             <button class="button button--link button--lg-common" type="button">
-                                <svg class="svg-icon select-icon" aria-hidden="true">
+                                <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                     <use xlink:href="#write"></use>
                                 </svg>
-                                <span class="select-button__text">편집</span>
+                                <span class="context-menu-button__text">편집</span>
                             </button>
                             <button class="button button--link button--lg-common" type="button">
-                                <svg class="svg-icon select-icon" aria-hidden="true">
+                                <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                     <use xlink:href="#copy"></use>
                                 </svg>
-                                <span class="select-button__text">복제</span>
+                                <span class="context-menu-button__text">복제</span>
                             </button>
                             <button class="button button--link button--lg-common" type="button">
-                                <svg class="svg-icon select-icon" aria-hidden="true">
+                                <svg class="svg-icon context-menu-icon" aria-hidden="true">
                                     <use xlink:href="#trash"></use>
                                 </svg>
-                                <span class="select-button__text">삭제</span>
+                                <span class="context-menu-button__text">삭제</span>
                             </button>
                         </div>
 
@@ -259,7 +259,7 @@
                                     </div>
                                 </div>
                                 <div class="modal__body">
-                                    <div class="modal__body modal__body--sm-toggle">
+                                    <div class="modal__body--sm-toggle">
                                         <div class="toggle-box">
                                             <span class="toggle-text">공유</span>
                                             <button
@@ -272,18 +272,18 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="modal__body modal__body--sm-link">
+                                    <div class=" modal__body--sm-link">
                                         <div class="link-box">
-                                            <h4 class="link-box__title">유기케이스 투기 과열지구</h4>
+                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
 
                                             <div class="link-box__content">
-                                                <div class="link-box__content--teal">
+                                                <div class="link-box__group--teal">
                                                     <div class="badge badge--sm badge--teal">
                                                         <span class="badge__label">기본링크</span>
                                                     </div>
                                                     <a href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
                                                 </div>
-                                                <div class="link-box__content--cyan">
+                                                <div class="link-box__group--cyan">
                                                     <div class="badge badge--sm badge--cyan">
                                                         <span class="badge__label">고정링크</span>
                                                     </div>
@@ -292,16 +292,16 @@
                                             </div>
                                         </div>
                                         <div class="link-box">
-                                            <h4 class="link-box__title">유기케이스 투기 과열지구</h4>
+                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
 
                                             <div class="link-box__content">
-                                                <div class="link-box__content--teal">
+                                                <div class="link-box__group--teal">
                                                     <div class="badge badge--sm badge--teal">
                                                         <span class="badge__label">기본링크</span>
                                                     </div>
                                                     <a href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
                                                 </div>
-                                                <div class="link-box__content--cyan">
+                                                <div class="link-box__group--cyan">
                                                     <div class="badge badge--sm badge--cyan">
                                                         <span class="badge__label">고정링크</span>
                                                     </div>
@@ -310,15 +310,15 @@
                                             </div>
                                         </div>
                                         <div class="link-box">
-                                            <h4 class="link-box__title">유기케이스 투기 과열지구</h4>
+                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
                                             <div class="link-box__content">
-                                                <div class="link-box__content--teal">
+                                                <div class="link-box__group--teal">
                                                     <div class="badge badge--sm badge--teal">
                                                         <span class="badge__label">기본링크</span>
                                                     </div>
                                                     <a href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
                                                 </div>
-                                                <div class="link-box__content--cyan">
+                                                <div class="link-box__group--cyan">
                                                     <div class="badge badge--sm badge--cyan">
                                                         <span class="badge__label">고정링크</span>
                                                     </div>
@@ -327,7 +327,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal__body modal__body--sm-help">
+                                    <div class=" modal__body--sm-help">
                                         <div class="modal__body--sm-help-box">
                                             <svg
                                                 class="modal-help-icon"
@@ -372,7 +372,7 @@
                                     </div>
                                 </div>
                                 <div class="modal__body">
-                                    <div class="modal__body modal__body--sm-toggle">
+                                    <div class=" modal__body--sm-toggle">
                                         <div class="toggle-box">
                                             <span class="toggle-text">공유</span>
                                             <button
@@ -385,18 +385,18 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="modal__body modal__body--sm-link">
+                                    <div class=" modal__body--sm-link">
                                         <div class="link-box">
-                                            <h4 class="link-box__title">유기케이스 투기 과열지구</h4>
+                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
 
                                             <div class="link-box__content">
-                                                <div class="link-box__content--teal">
+                                                <div class="link-box__group--teal">
                                                     <div class="badge badge--sm badge--teal">
                                                         <span class="badge__label">기본링크</span>
                                                     </div>
                                                     <a href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
                                                 </div>
-                                                <div class="link-box__content--cyan">
+                                                <div class="link-box__group--cyan">
                                                     <div class="badge badge--sm badge--cyan">
                                                         <span class="badge__label">고정링크</span>
                                                     </div>
@@ -405,7 +405,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal__body modal__body--sm-help">
+                                    <div class="modal__body--sm-help">
                                         <div class="modal__body--sm-help-box">
                                             <svg
                                                 class="modal-help-icon"
