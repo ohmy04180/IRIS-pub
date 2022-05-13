@@ -317,10 +317,10 @@ body {
 .modal__body {
     padding: 0 $spacing-xl;
 }
-.modal__body--sm-toggle {
+.modal__body__toggle-container{
     @include modal-togglebox;
 }
-.modal__body--sm-link {
+.modal__body__link-container{
 
     background-color: $ui-01-color;
     padding: 0 $spacing-md;
@@ -355,14 +355,8 @@ body {
 .modal__body {
     padding: 0 $spacing-xl;
 }
-.modal__body--sm-toggle {
-    @include modal-togglebox;
-}
-.modal__body--sm-link {
 
-    background-color: $ui-01-color;
-    padding: 0 $spacing-md;
-}
+
 
 .link-box__group--cyan,
 .link-box__group--teal {
@@ -378,6 +372,6 @@ body {
     word-break: break-all;
 }
 
-.modal__body--sm-help {
+.modal__body__help-container {
     @include modal-helpbox;
 }
