@@ -236,7 +236,7 @@ body {
     display: flex;
 }
 
-.container-body-box__select {
+.context-menu {
     position: absolute;
     width: 250px;
     padding: 8px 0;
@@ -258,9 +258,6 @@ body {
     display: block;
 }
 .button--lg-change {
-    
-    
-    text-align: right;
     padding: 4px 0 0 4px;
 }
 
@@ -270,29 +267,29 @@ body {
     display: block;
     text-align: left;
 }
-.select-button__text--choise {
+.context-menu-button__text--choise {
     color: $primary-color;
 }
 
-.select-icon {
+.context-menu-icon {
     width: 20px;
 }
 .change-icon {
     width: 20px;
 }
-.select-button__text {
+.context-menu-button__text {
     font-size: $font-md;
 }
 
-.select--dashboard {
+.context-menu--dashboard {
     display: flex;
     justify-content: space-between;
 }
 
-.select__toggle-box {
+.context-menu__toggle-box {
     @include dash-togglebox;
 }
-.select__toggle-button {
+.context-menu__toggle-button {
     width: 40px;
     height: 20px;
     padding: 1px;
@@ -320,10 +317,10 @@ body {
 .modal__body {
     padding: 0 $spacing-xl;
 }
-.modal__body--sm-toggle {
+.modal__body__toggle-container{
     @include modal-togglebox;
 }
-.modal__body--sm-link {
+.modal__body__link-container{
 
     background-color: $ui-01-color;
     padding: 0 $spacing-md;
@@ -341,12 +338,8 @@ body {
     padding: $spacing-md 0;
 }
 
-.link-box__content--cyan {
-    @include link-grid;
-}
 
 .modal__body--sm-help {
-
     @include modal-helpbox;
 }
 
@@ -362,29 +355,23 @@ body {
 .modal__body {
     padding: 0 $spacing-xl;
 }
-.modal__body--sm-toggle {
-    @include modal-togglebox;
-}
-.modal__body--sm-link {
 
-    background-color: $ui-01-color;
-    padding: 0 $spacing-md;
-}
 
-.link-box__content--cyan,
-.link-box__content--teal {
+
+.link-box__group--cyan,
+.link-box__group--teal {
     margin-bottom: $spacing-sm;
 }
 .badge--teal {
     display: inline-block;
 }
-.link-box__content--cyan {
+.link-box__group--cyan {
     @include link-grid;
 }
 .badge--cyan-link {
     word-break: break-all;
 }
 
-.modal__body--sm-help {
+.modal__body__help-container {
     @include modal-helpbox;
 }
