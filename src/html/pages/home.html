@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 홈페이지</title>
+    <link rel="stylesheet" href="../dist/css/style.min.css"/>
+
+</head>
+<body>
+    <header class="home-header">
+        <div class="header__top">
+            <div class="header__top-box">
+                <h1 class="top-box__logo">
+                    <a class="top-box__logo--link" href="">LOGO</a>
+                </h1>
+                <div class="top-box__service">
+                    <ul class="top-box__service-menu">
+                        <li><a class="top-box__service-menu--link" href="">로그인</a></li>
+                        <li class="top-box__service-menu--boundary">|</li>
+                        <li><a class="top-box__service-menu--link " href="">회원가입</a></li>
+                        <li class="top-box__service-menu--boundary">|</li>
+                        <li><a class="top-box__service-menu--link" href="">이용안내</a></li>
+                        <li class="top-box__service-menu--boundary">|</li>
+                        <li><a class="top-box__service-menu--link" href="">사이트맵</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav class="header__gnb">
+            <ul class="gnb-box">
+                <li class="gnb-box__list"><a class="gnb-box__list--link" href="">메뉴1</a></li>
+                <li class="gnb-box__list"><a class="gnb-box__list--link" href="">메뉴2</a></li>
+                <li class="gnb-box__list"><a class="gnb-box__list--link" href="">메뉴3</a></li>
+                <li class="gnb-box__list"><a class="gnb-box__list--link" href="">메뉴4</a></li>
+                <li class="gnb-box__list"><a class="gnb-box__list--link" href="">메뉴5</a></li>
+            </ul>
+            <ul class="media__lnb-box">
+                <li class="media__lnb-button-box">
+                    <button class="media__lnb-button">
+                        <svg class="lnb--menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <path d="M2 7a1 1 0 011-1h26a1 1 0 110 2H3a1 1 0 01-1-1zM2 16a1 1 0 011-1h26a1 1 0 110 2H3a1 1 0 01-1-1zM2 25a1 1 0 011-1h26a1 1 0 110 2H3a1 1 0 01-1-1z"/>
+                        </svg>
+                    </button>
+                </li>
+                <li class="media__lnb-text">lnb메뉴</li>
+                <li class="media__lnb-button-box">
+                    <button class="media__lnb-button">
+                        <svg class="lnb--home-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <path d="M16.612 3.213a1.01 1.01 0 00-1.242 0L4 12.42v14.58a2.004 2.004 0 002 2h20a2.004 2.004 0 002-2V12.429L16.612 3.213zM18 27h-4v-8h4v8zm2 0v-8a2.002 2.002 0 00-2-2h-4a2.002 2.002 0 00-2 2v8H6V13.062l10-7.79 10 7.8V27h-6z"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__breadcrumb">
+            <div class="header__breadcrumb-box">
+                <div class="breadcrumb__main" role="navigation" aria-label="Main">
+                    <span class="breadcrumb__text">
+                        <svg class="breadcrumb--home-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                            <path d="M16.612 3.213a1.01 1.01 0 00-1.242 0L4 12.42v14.58a2.004 2.004 0 002 2h20a2.004 2.004 0 002-2V12.429L16.612 3.213zM18 27h-4v-8h4v8zm2 0v-8a2.002 2.002 0 00-2-2h-4a2.002 2.002 0 00-2 2v8H6V13.062l10-7.79 10 7.8V27h-6z"/>
+                        </svg>home 
+                    </span>
+                    <span class="breadcrumb__text"> Depth1</span>
+                    <span class="breadcrumb__text"> Depth2 </span>
+                    <span class="breadcrumb__text"> Depth3 </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="home-section">
+        <div class="lnb__container">
+            <ul class="lnb__nav-box">
+                <div class="lnb__title">lnb메뉴</div>
+                <li class="lnb__menu-list1"><a class="lnb__menu-link1" href="">서브메뉴1</a></li>
+                <li class="lnb__menu--boundary">|</li>
+                <li class="lnb__menu-list2"><a class="lnb__menu-link2" href="">서브메뉴2</a></li>
+            </ul>
+            <div class="lnb__contents-box">
+                <div class="contents__title">subject-title 타이틀</div>
+                <div class="contents__menu-explain">subject-desc 각 메뉴별 설명글이 들어갑니다. </div>
+                <div class="lnb__contents">컨텐츠 1</div>
+            </div>
+        </div>
+    </section>
+    <footer class="home-footer">
+        <div class="home-footer__box">
+            <div class="footer__box--up">
+                <ul class="footer__fnb">
+                    <li class="fnb--list"><a class="fnb--link" href="">footer-menu1</a></li>
+                    <li class="fnb--list"><a class="fnb--link" href="">footer-menu2</a></li>
+                    <li class="fnb__privacy-list"><a class="fnb__privacy-link" href="">privacy</a></li>
+                    <li class="fnb--list"><a class="fnb--link" href="">footer-menu3</a></li>
+                    <li class="fnb--list"><a class="fnb--link" href="">footer-menu4</a></li>
+                </ul>
+            </div>
+            <div class="footer__box--down">
+                <div class="footer__logo-box">
+                    <h2><a class="footer-logo--link" href="">LOGO</a></h2>
+                </div>
+                <div class="footer__info-box">
+                    <strong class="info-box__address">
+                        본사(05854)서울특별시 송파구 법원로 128,c동 16층(문정동,SKV1 GL메트로시티)/
+                        TEL 02-538-9360 FAX 02-538-9369
+                    </strong>
+                    <strong class="info-box__copyright">Copyright ⓒ 2022 MOBIGEN Co.,Ltd.All rights reserved.
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../dist/js/main.bundle.js"></script>
+</body>
+</html>
