@@ -1,4 +1,15 @@
 
+@mixin flex-default {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin width {
+    width: calc(100% - 15%);
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -12,62 +23,58 @@ li{
 }
 
 body{
-    min-width: 780px;
+    min-width: rem(780px);
 }
 
-.home-header{
+.header{
     width: 100%;
 }
 .header__top{
     width: 100%;
 }
 .header__top-box{
-    width: calc(100% - 15%);
+    @include width;
     height: 100px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
+    @include flex-default;
 }
-.top-box__logo--link{
+.top-box__logo-link{
     width: 160px;
     height: 50px;
-    background: #2d2d2d;
-    color:#fff;
+    background: $link;
+    color:$text-04;
     text-align: center;
     padding-top: 3px;
     &:hover{
         color:#fff
     }
 }
-.top-box__service-menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
+.service__menu{
+    @include flex-default;
 }
-.top-box__service-menu--link{
-    color:#707070;
+.service__menu-link{
+    color:$text-03;
     &:hover{
-        color:#707070;
+        color:$text-03;
     }
 }
-.top-box__service-menu--boundary{
-    padding: 0 16px;
+.service__menu-boundary{
+    padding: 0 $spacing-md;
 }
-.header__gnb{
+
+
+.gnb{
     width: 100%;
-    background-color: #003E92;
+    background-color: $primary;
 }
-.gnb-box{
-    width: calc(100% - 15%);
+.gnb__box{
+    @include width;
     height: 65px;
     margin: 0 auto;
-    padding: 0 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0 $spacing-3xl;
+    @include flex-default;
 }
-.gnb-box__list{
+.gnb__box-list{
     position: relative;
     &:hover::before{
         position: absolute;
@@ -75,233 +82,244 @@ body{
         width: 100%;
         height: 3px;
         bottom: 0;
-        background-color: #fff;
+        background-color: $text-04;
     }
 }
-.gnb-box__list--link{
-    color:#fff;
-    font-size: 15px;
+.gnb__box-link{
+    color:$text-04;
+    @include font-size("15");
     padding: 20px;
 
     &:hover{
-        color:#fff;
+        color:$text-04;
     }
 }
-.media__lnb-box{
+.header__lnb-box{
     display: none;
 }
 
 .header__breadcrumb{
     width: 100%;
     height: 60px;
-    padding: 18px 0;
-    border-bottom: 1px solid #ccc;
+    padding: $spacing-md 0;
+    border-bottom: 1px solid $field-border;
 }
 .header__breadcrumb-box{
-    width: calc(100% - 15%);
+    @include width;
     margin: 0 auto;
 
 }
 
-.breadcrumb__text{
-    font-size: 15px;
+.header__breadcrumb-text{
+    @include font-size("15");
 }
-.breadcrumb--home-icon{
+.header__breadcrumb-home{
     width: 15px;
     height: 15px;
-    fill:#8f94a3;
-    margin-right: 4px;
+    fill:$icon-01;
+    margin-right: $spacing-2xs;
 }
 
 
 ////section
 
-.home-section{
-    margin: 60px 0;
+.section{
+    margin: $layout-lg;
 }
 
-.lnb__container{
-    width: calc(100% - 15%);
-    height: 400px;
+.section__container{
+    @include width;
     margin: 0 auto;
     display: grid;
     column-gap: 32px;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 400px 1fr;
+
 }
-.lnb__nav-box{
+.section__container-lnb{
     grid-column-start: 1;
     grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
-.lnb__contents-box{
+.section__container-contents{
     grid-column-start: 2;
     grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}// 그리드 나누기
+
+.section__container-lnb-title{
+    @include font-size("20");
+    @include font-weight('bold');
+    padding-bottom: $spacing-lg;
+    border-bottom: 2px solid $text-01;
+    color:$text-01;
+}
+.section__container-lnb-list1,.section__container-lnb-list2{
+    margin-top: $spacing-md;
 }
 
-.lnb__title{
-    font-size: 20px;
-    font-weight: bold;
-    padding-bottom: 25px;
-    border-bottom: 2px solid #2d2d2d;
-    color:#2d2d2d;
-}
-.lnb__menu-list1,.lnb__menu-list2{
-    margin-top: 20px;
-}
-
-.lnb__menu-link1,.lnb__menu-link2{
+.section__container-lnb-link1,.section__container-lnb-link2{
     width: 100%;
     height: 50px;
     padding:15px 0 15px 15px;
-    font-size: 14px;
+    @include font-size("14");
 }
-.lnb__menu-link1{
-    background: #2D6AD1;
-    color:#fff;
+.section__container-lnb-link1{
+    background: $primary;
+    color:$text-04;
     &:hover{
-        color:#fff;
+        color:$text-04;
     }
 }
-.lnb__menu-link2{
-    color:#2d2d2d;
+.section__container-lnb-link2{
+    color:$text-01;
     &:hover{
-        color:#2d2d2d;
+        color:$text-01;
     }
 }
-
-.lnb__menu--boundary{
+.section__container-lnb-boundary{
     display: none;
 }
-.contents__title{
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color:#2d2d2d;
+
+
+.section__container-contents-title{
+    @include font-size("20");
+    @include font-weight('bold');
+    margin-bottom:$spacing-lg;
+    color:$text-01;
 }
-.contents__menu-explain{
-    margin-bottom: 40px; 
-    color:#707070;  
+.section__container-contents-explain{
+    margin-bottom: $spacing-xl; 
+    color:$text-02;  
 }
-.lnb__contents{
+.section__container-contents-box{
     width: 100%;
-    height: 70%;
-    background-color: #ccc;
+    height: 100%;
+    background-color: $ui-04;
     text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    padding-top: 132px;
-    color:#2d2d2d;
+    position: relative;
+}
+.section__contents-box-text{
+    @include font-size("15");
+    @include font-weight('bold');
+    color:$text-01;
+    position: absolute;
+    top: 50%;
 }
 
 ////footer
 
-.home-footer{
-    background-color: #46484C;
+.footer{
+   margin-top: $layout-2xl;
+    background-color: $ui-04;
 }
-.footer__box--up{
+.footer__box-top{
     width: 100%;
-    background: #3B3C3E;
+    background: $ui-03;
 }
-.footer__fnb{
-    width: calc(100% - 15%); 
+.fnb{
+    @include width;
     height: 60px;
     margin: 0 auto;
     display: flex;
     align-items: center; 
 }
-.fnb--link{
+.fnb__link{
     height: 60px;
-    color:#fff;
-    font-weight: bold;
+    color:$text-01;
+    @include font-weight('bold');
     padding:18px 30px 0 0;
     &:hover{
-        color:#fff;
+        color:$text-01;
         text-decoration: underline;
     }
 }
 .fnb__privacy-link{
-    color:orange;
+    color:$support-01;
     height: 60px;
-    font-weight: bold;
+    @include font-weight('bold');
     padding:18px 30px 0 0;
     &:hover{
-        color:orange;
+        color:$support-01;
     }
 }
-.footer__box--down{
-    width: calc(100% - 15%); 
+.footer__box-bottom{
+    @include width;
     margin: 0 auto;
     display: flex;
     align-items: center; 
-    padding: 28px 0;
+    padding: $spacing-lg 0;
 }
 
-.footer-logo--link{
+.footer__logo-link{
     width: 160px;
     height: 48px;
     text-align: center;
-    background: #ccc;
+    background: $field-bg;
     padding-top: 8px;
-    color:#707070;
+    color:$link;
     &:hover{
-        color:#707070;
+        color:$link;
     }
 }
-.footer__info-box{
-    color:#fff;
+.footer__info{
+    color:$text-01;
     display: flex;
     flex-direction: column;
-    margin-left: 60px;
+    margin-left: $spacing-3xl;
 }
-.info-box__address,.info-box__copyright{
-    font-weight: normal;
+.footer__info-address,.footer__info-copyright{
+    @include font-weight('regular');
+
 }
-.info-box__address{
-    margin-bottom: 4px;
+.footer__info-address{
+    margin-bottom: $spacing-xs;
 }
 
 
-@media(max-width:767px){
+@include respond-to('tablet'){
+
     body{
         min-width: 0;
     }
     .header__top{
         display: none;
     }
-    .header__gnb{
+    .gnb{
         height: 60px;
     }
-    .gnb-box{
+    .gnb__box{
         display: none;
     }
-    .media__lnb-box{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        padding: 12px 20px;
+
+    .header__lnb-box{
+        @include flex-default;
+        padding: $spacing-sm $spacing-lg;
     }
-    .media__lnb-text{
-        color:#fff;
-        font-size: 15px;
+    .header__lnb-text{
+        color:$text-04;
+        @include font-size("15");
     }
-    .media__lnb-button{
+    .header__lnb-button{
         background:none;
         border:none;
         cursor: pointer;
     }
-    .lnb--menu-icon,.lnb--home-icon{
-        fill:#fff;
+    .header__lnb-menu-icon,.header__lnb-home-icon{
+        fill:$text-04;
     }
+
     .header__breadcrumb{
         display: none;
     }
 
-
-
-    .home-section{
+    .section{
         margin:0;
     }
     
-    .lnb__container{
+    .section__container{
         width: 100%;
         height: 100%;
         margin: 0 auto;
@@ -309,84 +327,84 @@ body{
         flex-direction: column;
   
     }
-    .lnb__nav-box{
+    .section__container-lnb-menu{
        display: flex;
        align-items: center;
-       border-bottom: 1px solid #ccc;
+       border-bottom: 1px solid $field-border;
 
     }
-    .lnb__contents-box{
-        padding: 20px 20px 50px 20px;
+    .section__container-contents{
+        padding: $layout-2xs;
         height: 500px;
     }
-    .lnb__title{
+    .section__container-lnb-title{
         display: none;
     }
-    .lnb__menu-list1,.lnb__menu-list2{
+    .section__container-lnb-list1,.section__container-lnb-list2{
         margin-top: 0;
     }
     
-    .lnb__menu-link1,.lnb__menu-link2{
+    .section__container-lnb-link1,.section__container-lnb-link2{
         padding:15px 20px;
-        font-weight: bold;
+        @include font-weight('bold');
     }
-    .lnb__menu-link1{
-        color:#2D6AD1;
+    .section__container-lnb-link1{
+        color:$default-focus;
         background: none;
         &:hover{
-            color:#2D6AD1;
+            color:$default-focus;
         }
     }
  
-    .lnb__menu--boundary{
+    .section__container-lnb-boundary{
         display: block;
-        color:#ccc;
+        color:$field-border;
     }
 
-    .contents__title{
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color:#2d2d2d;
+    .section__container-contents-title{
+        @include font-size("25");
+        @include font-weight('bold');
+        margin-bottom: $spacing-md;
     }
-    .contents__menu-explain{
-        margin-bottom: 40px; 
-        color:#707070;  
+    .section__container-contents-explain{
+        margin-bottom: $spacing-2xl;  
     }
-    .lnb__contents{
+    .section__container-contents-box{
         width: 100%;
         height:70%;
     }
-    .footer__box--down{
+    .footer{
+        margin-top: 0;
+    }
+    .footer__box-bottom{
         width: 100%;
         flex-direction: column-reverse; 
-        padding: 28px 0;
+        padding: $spacing-lg 0;
         
     }
-    .footer__info-box{
+    .footer__info{
         margin-left: 0px;
         text-align: center;
-        padding: 0 5px;
+        padding: 0 $spacing-2xs;
     }
-    .footer-logo--link{
+    .footer__logo-link{
         width: 150px;
         height: 40px;
-        background: #fff;
         padding-top: 4px;
-        margin-top: 28px;
+        margin-top: $spacing-lg;
     }
-    .footer__fnb{
+    .fnb{
         width: 100%; 
         height:100%;
         margin: 0 auto;
         justify-content:space-around;
     }
-    .fnb--list{
+    .fnb__list{
         &:nth-child(4){
             display: none;
         }
     }
-    .fnb--link{
+    .fnb__link{
         height: 60px;
         padding:18px 0 0 0;
     }
