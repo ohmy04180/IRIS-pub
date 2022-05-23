@@ -34,17 +34,17 @@ body{
 }
 .header__top-box{
     @include width;
-    height: 100px;
-    margin: 0 auto;
     @include flex-default;
+    height: rem(100px);
+    margin: 0 auto;
 }
 .top-box__logo-link{
-    width: 160px;
-    height: 50px;
+    width: rem(160px);
+    height: rem(50px);
+    padding-top:$spacing-3xs;
+    text-align: center;
     background: $link;
     color:$text-04;
-    text-align: center;
-    padding-top: 3px;
     &:hover{
         color:$text-04;
     }
@@ -69,27 +69,26 @@ body{
 }
 .gnb__box{
     @include width;
-    height: 65px;
+    @include flex-default;
+    height: rem(65px);
     margin: 0 auto;
     padding: 0 $spacing-3xl;
-    @include flex-default;
 }
 .gnb__box-list{
     position: relative;
     &:hover::before{
-        position: absolute;
         content: "";
+        position: absolute;
         width: 100%;
-        height: 3px;
+        height: rem(3px);
         bottom: 0;
         background-color: $text-04;
     }
 }
 .gnb__box-link{
-    color:$text-04;
     @include font-size("15");
-    padding: 20px;
-
+    padding: $spacing-md;
+    color:$text-04;
     &:hover{
         color:$text-04;
     }
@@ -100,7 +99,7 @@ body{
 
 .header__breadcrumb{
     width: 100%;
-    height: 60px;
+    height: rem(60px);
     padding: $spacing-md 0;
     border-bottom: 1px solid $field-border;
 }
@@ -114,10 +113,10 @@ body{
     @include font-size("15");
 }
 .header__breadcrumb-home{
-    width: 15px;
-    height: 15px;
-    fill:$icon-01;
+    width: rem(15px);
+    height: rem(15px);
     margin-right: $spacing-2xs;
+    fill:$icon-01;
 }
 
 
@@ -129,24 +128,19 @@ body{
 
 .section__container{
     @include width;
-    margin: 0 auto;
     display: grid;
+    margin: 0 auto;
     column-gap: 32px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 400px 1fr;
-
 }
 .section__container-lnb{
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
 }
 .section__container-contents{
     grid-column-start: 2;
     grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
 }// 그리드 나누기
 
 .section__container-lnb-title{
@@ -161,10 +155,10 @@ body{
 }
 
 .section__container-lnb-link1,.section__container-lnb-link2{
-    width: 100%;
-    height: 50px;
-    padding:15px 0 15px 15px;
     @include font-size("14");
+    width: 100%;
+    height: rem(50px);
+    padding:$spacing-md 0 $spacing-md $spacing-md;
 }
 .section__container-lnb-link1{
     background: $primary;
@@ -195,24 +189,24 @@ body{
     color:$text-02;  
 }
 .section__container-contents-box{
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: $ui-04;
     text-align: center;
-    position: relative;
 }
 .section__contents-box-text{
     @include font-size("15");
     @include font-weight('bold');
-    color:$text-01;
     position: absolute;
     top: 50%;
+    color:$text-01;
 }
 
 ////footer
 
 .footer{
-   margin-top: $layout-2xl;
+    margin-top: $layout-2xl;
     background-color: $ui-04;
 }
 .footer__box-top{
@@ -221,54 +215,54 @@ body{
 }
 .fnb{
     @include width;
-    height: 60px;
-    margin: 0 auto;
     display: flex;
+    height: rem(60px);
+    margin: 0 auto;
     align-items: center; 
 }
 .fnb__link{
-    height: 60px;
-    color:$text-01;
     @include font-weight('bold');
-    padding:18px 30px 0 0;
+    height: rem(60px);
+    padding:$spacing-md $spacing-xl 0 0;
+    color:$text-01;
     &:hover{
         color:$text-01;
         text-decoration: underline;
     }
 }
 .fnb__privacy-link{
-    color:$support-01;
-    height: 60px;
     @include font-weight('bold');
-    padding:18px 30px 0 0;
+    height: rem(60px);
+    padding:$spacing-md $spacing-xl 0 0;
+    color:$support-01;
     &:hover{
         color:$support-01;
     }
 }
 .footer__box-bottom{
     @include width;
-    margin: 0 auto;
     display: flex;
-    align-items: center; 
+    align-items: center;
+    margin: 0 auto;
     padding: $spacing-lg 0;
 }
 
 .footer__logo-link{
-    width: 160px;
-    height: 48px;
+    width: rem(160px);
+    height: rem(48px);
+    padding-top: $spacing-xs;
     text-align: center;
     background: $field-bg;
-    padding-top: 8px;
     color:$link;
     &:hover{
         color:$link;
     }
 }
 .footer__info{
-    color:$text-01;
     display: flex;
     flex-direction: column;
     margin-left: $spacing-3xl;
+    color:$text-01;
 }
 .footer__info-address,.footer__info-copyright{
     @include font-weight('regular');
@@ -288,19 +282,18 @@ body{
         display: none;
     }
     .gnb{
-        height: 60px;
+        height: rem(60px);
     }
     .gnb__box{
         display: none;
     }
-
     .header__lnb-box{
         @include flex-default;
         padding: $spacing-sm $spacing-lg;
     }
     .header__lnb-text{
-        color:$text-04;
         @include font-size("15");
+        color:$text-04;
     }
     .header__lnb-button{
         background:none;
@@ -310,43 +303,37 @@ body{
     .header__lnb-menu-icon,.header__lnb-home-icon{
         fill:$text-04;
     }
-
     .header__breadcrumb{
         display: none;
     }
-
     .section{
         margin:0;
     }
-    
     .section__container{
+        display: flex;
+        flex-direction: column;
         width: 100%;
         height: 100%;
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-  
     }
     .section__container-lnb-menu{
        display: flex;
        align-items: center;
        border-bottom: 1px solid $field-border;
-
     }
     .section__container-contents{
+        height: rem(500px);
         padding: $layout-2xs;
-        height: 500px;
     }
     .section__container-lnb-title{
         display: none;
     }
     .section__container-lnb-list1,.section__container-lnb-list2{
         margin-top: 0;
-    }
-    
+    } 
     .section__container-lnb-link1,.section__container-lnb-link2{
-        padding:15px 20px;
         @include font-weight('bold');
+        padding:$spacing-md $spacing-md;
     }
     .section__container-lnb-link1{
         color:$default-focus;
@@ -355,12 +342,10 @@ body{
             color:$default-focus;
         }
     }
- 
     .section__container-lnb-boundary{
         display: block;
         color:$field-border;
     }
-
     .section__container-contents-title{
         @include font-size("25");
         @include font-weight('bold');
@@ -384,13 +369,13 @@ body{
     }
     .footer__info{
         margin-left: 0px;
-        text-align: center;
         padding: 0 $spacing-2xs;
+        text-align: center;
     }
     .footer__logo-link{
-        width: 150px;
-        height: 40px;
-        padding-top: 4px;
+        width: rem(150px);
+        height: rem(40px);
+        padding-top:$spacing-2xs;
         margin-top: $spacing-lg;
     }
     .fnb{
@@ -405,7 +390,7 @@ body{
         }
     }
     .fnb__link{
-        height: 60px;
-        padding:18px 0 0 0;
+        height: rem(60px);
+        padding:$spacing-md 0 0 0;
     }
 }  /////미디어 쿼리
