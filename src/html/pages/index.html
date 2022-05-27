@@ -9,21 +9,21 @@
 
     </head>
 
-    <body>
+    <body class="index-body">
         <header>
             <div class="top">
-                <div class="top-gnb">
-                    <h1 class="top-gnb__logo">
-                        <a class="top-gnb__logo-link" href="#">LOGO
-                          <span class="top-gnb__logo-sub">관리</span>
+                <div class="gnb">
+                    <h1 class="gnb__logo">
+                        <a class="gnb__logo-link" href="#">LOGO
+                          <span class="gnb__logo-sub">관리</span>
                         </a>
                     </h1>
-                    <ul class="top-gnb__menu-box">
-                        <li class="top-gnb__menu-box-list">
-                            <a class="top-gnb__menu-link" href="#">작업조회</a>
+                    <ul class="gnb__menu">
+                        <li class="gnb__menu-list">
+                            <a class="gnb__menu-link" href="#">작업조회</a>
                         </li>
-                        <li class="top-gnb__menu-box-list">
-                            <a class="top-gnb__menu-link" href="#">
+                        <li class="gnb__menu-list">
+                            <a class="gnb__menu-link" href="#">
                                 사용자관리
                                 <svg
                                     style="fill:#fff"
@@ -37,23 +37,23 @@
                                         clip-rule="evenodd"/>
                                 </svg>
                             </a>
-                        </li class="top-gnb__menu-box-list">
-                        <li class="top-gnb__menu-box-list">
-                            <a class="top-gnb__menu-link" href="#">메뉴관리</a>
                         </li>
-                        <li class="top-gnb__menu-box-list">
-                            <a class="top-gnb__menu-link" href="#">환경설정</a>
+                        <li class="gnb__menu-list">
+                            <a class="gnb__menu-link" href="#">메뉴관리</a>
+                        </li>
+                        <li class="gnb__menu-list gnb--active">
+                            <a class="gnb__menu-link gnb-link--active" href="#">환경설정</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="top-toolbar">
-                    <ul class="top-toolbar-items">
-                        <li class="top-toolbar-items__move">
-                            <button class="top-toolbar-items__move-button">
-                                <span class="top-toolbar-items__move--left">
+                <div class="top__toolbar">
+                    <ul class="top__toolbar-items">
+                        <li class="top__toolbar-move">
+                            <button class="top__toolbar-move-button">
+                                <span class="top__toolbar-move--left">
                                     <svg
-                                        class="top-toolbar-items__move--left-icon"
+                                        class="top__toolbar-move--left-icon"
                                         style="fill:#fff"
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="32"
@@ -66,10 +66,10 @@
                                     </svg>
                                 </span>
                             </button>
-                            <button class="top-toolbar-items__move-button">
-                                <span class="top-toolbar-items__move--right">
+                            <button class="top__toolbar-move-button">
+                                <span class="top__toolbar-move--right">
                                     <svg
-                                        class="top-toolbar-items__move--right-icon"
+                                        class="top__toolbar-move--right-icon"
                                         style="fill:#fff"
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="32"
@@ -84,10 +84,10 @@
                             </button>
                         </li>
 
-                        <li class="top-toolbar-items__helf-outline">
-                            <button class="top-toolbar-items__button">
+                        <li class="top__toolbar-helf">
+                            <button class="top__toolbar-button">
                                 <svg
-                                    class="top-toolbar-items__helf-outline-icon"
+                                    class="top__toolbar-helf-icon"
                                     style="fill:#fff;"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -103,9 +103,9 @@
                             </button>
                         </li>
 
-                        <li class="top-toolbar-items__global">
+                        <li class="top__toolbar-global">
                             <svg
-                                class="top-toolbar-items__global-icon1"
+                                class="top__toolbar-global-icon1"
                                 style="fill:#fff"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -125,9 +125,9 @@
                                     clip-rule="evenodd"/>
                             </svg>
                             <span class="top-toolbar-items__global-text">한국어</span>
-                            <button class="top-toolbar-items__button">
+                            <button class="top__toolbar-button">
                                 <svg
-                                    class="top-toolbar-items__global-icon2"
+                                    class="top__toolbar-global-icon2"
                                     style="fill:#fff"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -140,11 +140,11 @@
                                 </svg>
                             </button>
                         </li>
-                        <li class="top-toolbar-items__app-switcher">
-                            <button class="top-toolbar-items__switcher-button">
-                                <span class="top-toolbar-items__app-switche-text">root</span>
+                        <li class="top__toolbar-switcher">
+                            <button class="top__toolbar--switcher-button">
+                                <span class="top__toolbar-switcher-text">root</span>
                                 <svg
-                                    class="top-toolbar-items__app-switcher-icon"
+                                    class="top__toolbar-switcher-icon"
                                     style="fill:#fff"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="26"
@@ -174,10 +174,10 @@
             </div>
             <div class="setting">
                 <!--컨테이너박스-->
-                <div class="setting__left-menu">
+                <div class="setting__left">
                     <!--왼쪽컨테이너-->
-                    <ul class="setting__left-menu-box">
-                        <li class="setting__left-menu-list">
+                    <ul class="setting__left-box">
+                        <li class="setting__left-list">
                             <span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -196,11 +196,11 @@
                                     <path d="M24.512 22.5a2 2 0 11-4-.001 2 2 0 014 .001z"/>
                                 </svg>
                             </span>
-                            <span class="setting__left-menu non-selected">
-                                <a href="#">일반설정</a>
+                            <span class="setting__left-list-text list--non-selected">
+                                <a class="setting__left-list-link" href="#">일반설정</a>
                             </span>
                         </li>
-                        <li class="setting__left-menu-list">
+                        <li class="setting__left-list">
                             <span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -218,29 +218,29 @@
                                         clip-rule="evenodd"/>
                                 </svg>
                             </span>
-                            <span class="setting__left-menu selected">
-                                <a href="#">시스템설정</a>
+                            <span class="setting__left-list-text list--selected">
+                                <a class="setting__left-list-link" href="#">시스템설정</a>
                             </span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="setting__right-menu">
+                <div class="setting__right">
                     <!--오른쪽컨테이너-->
-                    <div class="setting__right-menu-notification-wrap">
-                        <div class="notification notification--info" role="alert">
-                            <svg class="notification__icon svg-icon" aria-hidden="true">
+                    <div class="setting__right-notification">
+                        <div class="notification--info notification" role="alert">
+                            <svg class="notification__icon" aria-hidden="true">
                                 <use xlink:href="#info-fill"></use>
                             </svg>
                             <div class="notification__contents">
-                                <p class="notification__title">시스템 설정은 서버를 재시작해야만 적용 됩니다.<br>
+                                <p class="notification__contents-text">시스템 설정은 서버를 재시작해야만 적용 됩니다.<br>
                                     서버 재시작 중, IRIS 사용이 중단되며 저장하지 않은 데이터는 삭제 됩니다. 문제 발생 시, 담당자에게 연락바랍니다.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="component">
-                        <form class="form form--lg form--vertical">
+                    <div class="setting__right-form">
+                        <form class="form__box form--lg form--vertical">
                             <div class="form__body">
                                 <div class="form__item">
                                     <label class="form__label">
@@ -282,58 +282,53 @@
                                         </span>
                                     </label>
                                     <div class="form__detail">
-                                        <input type="text" class="text-input text-input--lg" placeholder="/api/event"></div>
+                                        <input type="text" class="text-input text-input--lg" placeholder="/api/event">
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="component__form2">
-                                <div class="component__form2__item-group">
-                                    <form class="form form--lg">
-                                        <div class="form__head">
-                                            <strong class="form__head-title">
-                                                데이터 소스 연동 정보
-                                            </strong>
-                                        </div>
-                                        <div class="form__body">
-                                            <div class="form__item">
-                                                <!--display:flex안먹음-->
-                                                <label class="form__label">
-                                                    <span class="form__label-text2">
-                                                        URL
-                                                        <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
-                                                            <use xlink:href="#help-outline"></use>
-                                                        </svg>
-                                                    </span>
-                                                </label>
-                                                <div class="form__detail">
-                                                    <input type="text" class="text-input text-input--lg" placeholder=""></div>
-                                            </div>
-                                            <div class="form__item">
-                                                <label class="form__label">
-                                                    <span class="form__label-text2">
-                                                        Username
-                                                        <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
-                                                            <use xlink:href="#help-outline"></use>
-                                                        </svg>
-                                                    </span>
-                                                </label>
-                                                <div class="form__detail">
-                                                    <input type="text" class="text-input text-input--lg" placeholder=""></div>
-                                            </div>
-                                            <div class="form__item">
-                                                <label class="form__label">
-                                                    <span class="form__label-text2">
-                                                        password
-                                                        <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
-                                                            <use xlink:href="#help-outline"></use>
-                                                        </svg>
-                                                    </span>
-                                                </label>
-                                                <div class="form__detail">
-                                                    <input type="text" class="text-input text-input--lg" placeholder=""></div>
-                                            </div>
-                                        </div>
-                                    </form>
+        
+                            <div class="form__head">
+                                <strong class="form__head-title">
+                                    데이터 소스 연동 정보
+                                </strong>
+                            </div>
+                            <div class="form__body">
+                                <div class="form__item">
+                                    <!--display:flex안먹음-->
+                                    <label class="form__label">
+                                        <span class="form__label-text2">
+                                            URL
+                                            <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
+                                                <use xlink:href="#help-outline"></use>
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <div class="form__detail">
+                                        <input type="text" class="text-input text-input--lg" placeholder=""></div>
+                                </div>
+                                <div class="form__item">
+                                    <label class="form__label">
+                                        <span class="form__label-text2">
+                                            Username
+                                            <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
+                                                <use xlink:href="#help-outline"></use>
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <div class="form__detail">
+                                        <input type="text" class="text-input text-input--lg" placeholder=""></div>
+                                </div>
+                                <div class="form__item">
+                                    <label class="form__label">
+                                        <span class="form__label-text2">
+                                            password
+                                            <svg style="fill:#606974;" class="svg-icon v-tooltip__icon" aria-hidden="true">
+                                                <use xlink:href="#help-outline"></use>
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <div class="form__detail">
+                                        <input type="text" class="text-input text-input--lg" placeholder=""></div>
                                 </div>
                             </div>
                         </form>
@@ -347,10 +342,10 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div> <!--setting__right-form-->
+                </div><!--setting__right-->
+            </div><!--setting-->
+        </div><!--main-->
         <script src="../dist/js/main.bundle.js"></script>
     </body>
 
