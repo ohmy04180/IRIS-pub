@@ -35,14 +35,14 @@
   margin-bottom: $spacing-md;
 }
 
-.import__list-filter {
+.list-filter {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: $spacing-xs;
 }
 
-.import__filter-text {
+.list-filter__text {
   @include font-size("12");
   &:last-child {
     margin-right: $spacing-sm;
@@ -68,15 +68,15 @@
   display: flex;
   align-items: center;
 }
-.filter__select {
+.filter-select {
   min-width: rem(100px);
   margin-right: $spacing-2xs;
 }
 
-.filter__search {
+.filter-search {
   display: flex;
 }
-.filter__icon {
+.filter-icon {
   margin-left: $spacing-xs;
 }
 .td--text-center {
@@ -86,14 +86,14 @@
   margin: 0 auto;
 }
 
-.import__exclude-checkbox {
+.exclude-checkbox {
   display: flex;
   align-items: center;
   justify-content: end;
   margin-top: $spacing-xs;
 }
 
-.import__upload-drag {
+.upload-drag {
   padding: rem(96px) 0;
 }
 .list-filter__checkbox {
@@ -104,7 +104,7 @@
   display: flex;
   align-items: center;
 }
-.list-checked__text {
+.list-filter__text--checked {
   margin-right: $spacing-xs;
   padding-left: $spacing-sm;
   border-left: 1px solid $field-border;
@@ -114,14 +114,14 @@
   margin-right: $spacing-2xs;
 }
 
-.import__category-modal {
+.category-modal {
   left: rem(1100px);
   top: rem(300px);
   width: rem(480px);
   min-height: 0;
 }
-.import__remove-alert,
-.import__check-alert {
+.remove-alert,
+.check-alert {
   left: rem(1100px);
   top: rem(100px);
 }
