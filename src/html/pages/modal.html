@@ -1,451 +1,351 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>모달</title>
-        <link rel="stylesheet" href="../dist/css/style.min.css"/>
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>모달</title>
+  <link rel="stylesheet" href="../dist/css/style.min.css" />
+</head>
 
-    <body class="modal-body">
+<body class="modal-body">
 
-        <header>
-            <div class="top">
-                <div class="gnb">
-                    <h1 class="gnb__logo">
-                        <a class="gnb__logo-link" href="#">LOGO
-                            <span class="gnb__logo-sub">관리</span>
-                        </a>
-                    </h1>
-                    <ul class="gnb__menu">
-                        <li class="gnb__menu-list">
-                            <a class="gnb__menu-link" href="#">보고서</a>
-                        </li>
-                    </ul>
+  <header>
+    <div class="top">
+      <div class="gnb">
+        <h1 class="gnb__logo">
+          <a class="gnb__logo-link" href="#">LOGO
+            <span class="gnb__logo-sub">관리</span>
+          </a>
+        </h1>
+        <ul class="gnb__menu">
+          <li class="gnb__menu-list">
+            <a class="gnb__menu-link" href="#">보고서</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="top__toolbar">
+        <ul class="top__toolbar-items">
+          <li class="top__toolbar-move">
+            <button class="top__toolbar-move-button">
+              <span class="top__toolbar-move--left">
+                <svg class="top__toolbar-move--left-icon" style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewbox="0 0 32 32">
+                  <path fill-rule="evenodd" d="M21.665 4.253a1 1 0 01.082 1.412L11.351 16.23l10.381 10.09a1 1 0 01-1.464 1.36l-11-10.755a1 1 0 01-.015-1.345l11-11.245a1 1 0 011.412-.082z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+            <button class="top__toolbar-move-button">
+              <span class="top__toolbar-move--right">
+                <svg class="top__toolbar-move--right-icon" style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewbox="0 0 32 32">
+                  <path fill-rule="evenodd" d="M9.335 27.747a1 1 0 01-.082-1.412L19.648 15.77 9.268 5.68a1 1 0 111.464-1.36l11 10.755a1 1 0 01.015 1.345l-11 11.245a1 1 0 01-1.412.082z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+          </li>
+
+          <li class="top__toolbar-helf">
+            <button class="top__toolbar-button">
+              <svg class="top__toolbar-helf-icon" style="fill:#fff;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 32 32">
+                <path d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z" />
+                <path fill-rule="evenodd" d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </li>
+
+          <li class="top__toolbar-global">
+            <svg class="top__toolbar-global-icon1" style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 32 32">
+              <path fill-rule="evenodd" d="M16 28c6.627 0 12-5.373 12-12S22.627 4 16 4 4 9.373 4 16s5.373 12 12 12zm0 2c7.732 0 14-6.268 14-14S23.732 2 16 2 2 8.268 2 16s6.268 14 14 14z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M18.688 25.037C19.751 22.812 20.5 19.615 20.5 16c0-3.615-.749-6.812-1.812-9.037-.533-1.115-1.107-1.908-1.634-2.396C16.527 4.08 16.17 4 16 4c-.17 0-.527.079-1.054.567-.527.488-1.101 1.28-1.634 2.396C12.249 9.188 11.5 12.385 11.5 16c0 3.615.749 6.812 1.812 9.037.533 1.115 1.107 1.908 1.634 2.396.527.488.885.567 1.054.567.17 0 .527-.079 1.054-.567.527-.488 1.101-1.28 1.634-2.396zM16 30c3.314 0 6.5-6.268 6.5-14S19.314 2 16 2 9.5 8.268 9.5 16s3.186 14 6.5 14z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M28 13H3v-2h25v2zM28 21H3v-2h25v2z" clip-rule="evenodd" />
+            </svg>
+            <span class="top-toolbar-items__global-text">한국어</span>
+            <button class="top__toolbar-button">
+              <svg class="top__toolbar-global-icon2" style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewbox="0 0 32 32">
+                <path fill-rule="evenodd" d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </li>
+          <li class="top__toolbar-switcher">
+            <button class="top__toolbar--switcher-button">
+              <span class="top__toolbar-switcher-text">root</span>
+              <svg class="top__toolbar-switcher-icon" style="fill:#fff" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewbox="0 0 32 32">
+                <path d="M4 4h5v5H4V4zM4 13.5h5v5H4v-5zM4 23h5v5H4v-5zM13.5 4h5v5h-5V4zM13.5 13.5h5v5h-5v-5zM13.5 23h5v5h-5v-5zM23 4h5v5h-5V4zM23 13.5h5v5h-5v-5zM23 23h5v5h-5v-5z" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="breadcrumb" role="navigation" aria-label="Main">
+      <h3 class="breadcrumb__text">
+        IRIS 설정
+      </h3>
+      <h3 class="breadcrumb__text">
+        환경설정
+      </h3>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="container__blank-white"></div>
+    <div class="container-top">
+      <div class="container__checkbox checkbox--lg">
+        <input id="check-05" type="checkbox" class="checkbox__input" value="label">
+        <label for="check-05" class="checkbox__label">전체 컨텐츠 17건 중 검색결과 5개</label>
+      </div>
+      <div class="container-section">
+        <!-- <div class="section"> -->
+        <div class="section__context-menu">
+          <!--첫번째-->
+          <ul class="context-menu__list">
+            <li class="context-menu__item context-menu__dashboard">
+              <button class="context-menu__button context__button-dashboard" type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#dashboard-menu"></use>
+                </svg>
+                <span class="context-menu-button__text">대시보드 사용여부</span>
+              </button>
+              <div class="context-menu__toggle-box">
+                <button class="toggle-switch__switch toggle-switch__switch--selected context-menu__toggle" type="button" aria-selected="true">
+                  <span class="toggle-switch__handle"></span>
+                </button>
+                <div class="badge badge--sm">
+                  <span class="badge__label">기본</span>
                 </div>
-
-                <div class="top__toolbar">
-                    <ul class="top__toolbar-items">
-                        <li class="top__toolbar-move">
-                            <button class="top__toolbar-move-button">
-                                <span class="top__toolbar-move--left">
-                                    <svg
-                                        class="top__toolbar-move--left-icon"
-                                        style="fill:#fff"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="32"
-                                        height="16"
-                                        viewbox="0 0 32 32">
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M21.665 4.253a1 1 0 01.082 1.412L11.351 16.23l10.381 10.09a1 1 0 01-1.464 1.36l-11-10.755a1 1 0 01-.015-1.345l11-11.245a1 1 0 011.412-.082z"
-                                            clip-rule="evenodd"/>
-                                    </svg>
-                                </span>
-                            </button>
-                            <button class="top__toolbar-move-button">
-                                <span class="top__toolbar-move--right">
-                                    <svg
-                                        class="top__toolbar-move--right-icon"
-                                        style="fill:#fff"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="32"
-                                        height="16"
-                                        viewbox="0 0 32 32">
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M9.335 27.747a1 1 0 01-.082-1.412L19.648 15.77 9.268 5.68a1 1 0 111.464-1.36l11 10.755a1 1 0 01.015 1.345l-11 11.245a1 1 0 01-1.412.082z"
-                                            clip-rule="evenodd"/>
-                                    </svg>
-                                </span>
-                            </button>
-                        </li>
-
-                        <li class="top__toolbar-helf">
-                            <button class="top__toolbar-button">
-                                <svg
-                                    class="top__toolbar-helf-icon"
-                                    style="fill:#fff;"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewbox="0 0 32 32">
-                                    <path
-                                        d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z"/>
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z"
-                                        clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </li>
-
-                        <li class="top__toolbar-global">
-                            <svg
-                                class="top__toolbar-global-icon1"
-                                style="fill:#fff"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewbox="0 0 32 32">
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M16 28c6.627 0 12-5.373 12-12S22.627 4 16 4 4 9.373 4 16s5.373 12 12 12zm0 2c7.732 0 14-6.268 14-14S23.732 2 16 2 2 8.268 2 16s6.268 14 14 14z"
-                                    clip-rule="evenodd"/>
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M18.688 25.037C19.751 22.812 20.5 19.615 20.5 16c0-3.615-.749-6.812-1.812-9.037-.533-1.115-1.107-1.908-1.634-2.396C16.527 4.08 16.17 4 16 4c-.17 0-.527.079-1.054.567-.527.488-1.101 1.28-1.634 2.396C12.249 9.188 11.5 12.385 11.5 16c0 3.615.749 6.812 1.812 9.037.533 1.115 1.107 1.908 1.634 2.396.527.488.885.567 1.054.567.17 0 .527-.079 1.054-.567.527-.488 1.101-1.28 1.634-2.396zM16 30c3.314 0 6.5-6.268 6.5-14S19.314 2 16 2 9.5 8.268 9.5 16s3.186 14 6.5 14z"
-                                    clip-rule="evenodd"/>
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M28 13H3v-2h25v2zM28 21H3v-2h25v2z"
-                                    clip-rule="evenodd"/>
-                            </svg>
-                            <span class="top-toolbar-items__global-text">한국어</span>
-                            <button class="top__toolbar-button">
-                                <svg
-                                    class="top__toolbar-global-icon2"
-                                    style="fill:#fff"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="32"
-                                    viewbox="0 0 32 32">
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M8.293 11.293a1 1 0 011.414 0L16 17.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </li>
-                        <li class="top__toolbar-switcher">
-                            <button class="top__toolbar--switcher-button">
-                                <span class="top__toolbar-switcher-text">root</span>
-                                <svg
-                                    class="top__toolbar-switcher-icon"
-                                    style="fill:#fff"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="26"
-                                    height="26"
-                                    viewbox="0 0 32 32">
-                                    <path
-                                        d="M4 4h5v5H4V4zM4 13.5h5v5H4v-5zM4 23h5v5H4v-5zM13.5 4h5v5h-5V4zM13.5 13.5h5v5h-5v-5zM13.5 23h5v5h-5v-5zM23 4h5v5h-5V4zM23 13.5h5v5h-5v-5zM23 23h5v5h-5v-5z"/>
-                                </svg>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="breadcrumb" role="navigation" aria-label="Main">
-                <h3 class="breadcrumb__text">
-                    IRIS 설정
-                </h3>
-                <h3 class="breadcrumb__text">
-                    환경설정
-                </h3>
-            </div>
-        </header>
-
-        <div class="container">
-            <div class="container__blank-white"></div>
-            <div class="container-top">
-                <div class="container__checkbox checkbox--lg">
-                    <input id="check-05" type="checkbox" class="checkbox__input" value="label">
-                    <label for="check-05" class="checkbox__label">전체 컨텐츠 17건 중 검색결과 5개</label>
-                </div>
-                <div class="container-section">
-                    <!-- <div class="section"> -->
-                        <div class="section__context-menu">
-                            <!--첫번째-->
-                            <ul class="context-menu__list">
-                                <li class="context-menu__item context-menu__dashboard">
-                                    <button class="context-menu__button context__button-dashboard" type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#dashboard-menu"></use>
-                                        </svg>
-                                        <span class="context-menu-button__text">대시보드 사용여부</span>
-                                    </button>
-                                    <div class="context-menu__toggle-box">
-                                        <button
-                                            class="toggle-switch__switch toggle-switch__switch--selected context-menu__toggle"
-                                            type="button"
-                                            aria-selected="true">
-                                            <span class="toggle-switch__handle"></span>
-                                        </button>
-                                        <div class="badge badge--sm">
-                                            <span class="badge__label">기본</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="context-menu__item">
-                                    <button class="context-menu__button context__button-common" type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#template"></use>
-                                        </svg>
-                                        <span class="context-menu__text">탬플릿으로 등록</span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item">
-                                    <button class="context-menu__button context__button-common" type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#key"></use>
-                                        </svg>
-                                        <span class="context-menu__text">권한설정</span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item">
-                                    <button class="context-menu__button context__button-common" type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#user-setting"></use>
-                                        </svg>
-                                        <span class="context-menu__text">소유자 설정</span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item context-menu__item--selected">
-                                    <button class="context-menu__button context__button-export " type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#url-export"></use>
-                                        </svg>
-                                        <span class="context-menu__text">내보내기 링크</span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item context-menu__item--disabled">
-                                    <button
-                                        class="context-menu__button context__button-change"
-                                        type="button"
-                                        disabled="disabled">
-                                        <svg
-                                            class="svg-icon context-menu__icon"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="32"
-                                            height="32"
-                                            viewbox="0 0 32 32">
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M19.793 4.293a1 1 0 011.414 0l6.5 6.5a1 1 0 010 1.414l-15.5 15.5A1 1 0 0111.5 28H5a1 1 0 01-1-1v-6.5a1 1 0 01.293-.707l15.5-15.5zM6 20.914V26h5.086l14.5-14.5L20.5 6.414 6 20.914z"
-                                                clip-rule="evenodd"/>
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M17.293 7.793a1 1 0 011.414 0l6.5 6.5a1 1 0 01.255.432l1 3.5a1 1 0 01-.255.982l-4.5 4.5a1 1 0 01-1.414-1.414l4.084-4.084-.767-2.685-6.317-6.317a1 1 0 010-1.414zM4.822 19.765a1 1 0 011.413.057l6 6.5a1 1 0 01-1.47 1.356l-6-6.5a1 1 0 01.057-1.413z"
-                                                clip-rule="evenodd"/>
-                                        </svg>
-                                        <span class="context-menu__text">
-                                            정보 변경
-                                        </span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item">
-                                    <button class="context-menu__button context__button-common" type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#write"></use>
-                                        </svg>
-                                        <span class="context-menu__text">편집</span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item">
-                                    <button class="context-menu__button context__button-common" type="button">
-                                        <svg class="svg-icon context-menu-icon" aria-hidden="true">
-                                            <use xlink:href="#copy"></use>
-                                        </svg>
-                                        <span class="context-menu__text">복제</span>
-                                    </button>
-                                </li>
-                                <li class="context-menu__item">
-                                    <button class="context-menu__button context__button-common" type="button">
-                                        <svg class="svg-icon context-menu__icon" aria-hidden="true">
-                                            <use xlink:href="#trash"></use>
-                                        </svg>
-                                        <span class="context-menu__text">삭제</span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="section__export-modal">
-                            <!--2번째-->
-                            <div class="modal export-modal" role="dialog" aria-modal="true">
-                                <div class="modal__head export-modal__head">
-                                    <div class="modal__head-title">
-                                        <span class="modal__head-title-text">내보내기 링크</span>
-                                    </div>
-                                    <div class="modal__head-close-button">
-                                        <button class="button button--icon button--link button--sm" title="닫기">
-                                            <svg class="svg-icon" aria-hidden="true">
-                                                <use xlink:href="#close"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="modal__body export-modal__body">
-                                    <div class="export-modal__toggle-box">
-                                        <div class="export-modal__toggle">
-                                            <span class="toggle-text">공유</span>
-                                            <button
-                                                class="toggle-switch__switch toggle-switch__switch--selected"
-                                                type="button"
-                                                aria-selected="true">
-                                                <span class="toggle-switch__handle">
-                                                    <span class="ir-pm"></span>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="export-modal__link-container">
-                                        <div class="export-modal__link-box">
-                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
-                                            <div class="link-box__content">
-                                                <div class="badge badge--sm badge--teal link-box__badge">
-                                                    <span class="badge__label">기본링크</span>
-                                                </div>
-                                                <a class="badge-link"  href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
-                                            </div>
-                                            <div class="link-box__content--cyan">
-                                                <div class="badge badge--sm badge--cyan link-box__badge--cyan">
-                                                    <span class="badge__label">고정링크</span>
-                                                </div>
-                                                <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
-                                            </div>
-                                        </div>
-                                        <div class="export-modal__link-box">
-                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
-                                            <div class="link-box__content">
-                                                <div class="badge badge--sm badge--teal link-box__badge">
-                                                    <span class="badge__label">기본링크</span>
-                                                </div>
-                                                <a class="badge-link"  href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
-                                            </div>
-                                            <div class="link-box__content--cyan">
-                                                <div class="badge badge--sm badge--cyan link-box__badge--cyan">
-                                                    <span class="badge__label">고정링크</span>
-                                                </div>
-                                                <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
-                                            </div>
-                                        </div>
-                                        <div class="export-modal__link-box">
-                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
-                                            <div class="link-box__content">
-                                                <div class="badge badge--sm badge--teal link-box__badge">
-                                                    <span class="badge__label">기본링크</span>
-                                                </div>
-                                                <a class="badge-link" href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
-                                            </div>
-                                            <div class="link-box__content--cyan">
-                                                <div class="badge badge--sm badge--cyan link-box__badge--cyan">
-                                                    <span class="badge__label">고정링크</span>
-                                                </div>
-                                                <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="export-modal__help-container">
-                                        <div class="export-modal__help-box">
-                                            <svg
-                                                class="svg-icon export-modal__help-icon"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="20"
-                                                height="20"
-                                                viewbox="0 0 32 32">
-                                                <path
-                                                    d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z"/>
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z"
-                                                    clip-rule="evenodd"/>
-                                            </svg>
-                                            <p class="export-modal__help-text">*링크를 클릭하면 클릭보드에 복사됩니다.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal__foot export-modal__foot">
-                                    <div class="modal__foot-buttons">
-                                        <button class="button button--primary button--lg" type="button">
-                                            <span>닫기</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="section__export-modal--sm">
-                            <!--3번째-->
-                            <div class="modal export-modal" role="dialog" aria-modal="true">
-                                <div class="modal__head">
-                                    <div class="modal__head-title">
-                                        <span class="modal__head-title-text">내보내기 링크</span>
-                                    </div>
-                                    <div class="modal__head-close-button">
-                                        <button class="button button--icon button--link button--sm" title="닫기">
-                                            <svg class="svg-icon" aria-hidden="true">
-                                                <use xlink:href="#close"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="modal__body export-modal__body">
-                                    <div class="export-modal__toggle-box">
-                                        <div class="export-modal__toggle">
-                                            <span class="toggle-text">공유</span>
-                                            <button
-                                                class="toggle-switch__switch toggle-switch__switch--selected"
-                                                type="button"
-                                                aria-selected="true">
-                                                <span class="toggle-switch__handle">
-                                                    <span class="ir-pm"></span>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="modal__body__link-container">
-                                        <div class="export-modal__link-box">
-                                            <strong class="link-box__title">유기케이스 투기 과열지구</strong>
-                                            <div class="link-box__content">
-                                                <div class="badge badge--sm badge--teal link-box__badge">
-                                                    <span class="badge__label">기본링크</span>
-                                                </div>
-                                                <a class="badge-link" href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
-                                            </div>
-                                            <div class="link-box__content--cyan">
-                                                <div class="badge badge--sm badge--cyan link-box__badge--cyan">
-                                                    <span class="badge__label">고정링크</span>
-                                                </div>
-                                                <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="export-modal__help-container">
-                                        <div class="export-modal__help-box">
-                                            <svg
-                                                class="svg-icon export-modal__help-icon"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="20"
-                                                height="20"
-                                                viewbox="0 0 32 32">
-                                                <path
-                                                    d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z"/>
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z"
-                                                    clip-rule="evenodd"/>
-                                            </svg>
-                                            <p class="export-modal__help-text">*링크를 클릭하면 클릭보드에 복사됩니다.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal__foot export-modal__foot">
-                                    <div class="modal__foot-buttons">
-                                        <button class="button button--primary button--lg" type="button">
-                                            <span>닫기</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- </div> -->
-                </div>
-            </div>
+              </div>
+            </li>
+            <li class="context-menu__item">
+              <button class="context-menu__button context__button-common" type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#template"></use>
+                </svg>
+                <span class="context-menu__text">탬플릿으로 등록</span>
+              </button>
+            </li>
+            <li class="context-menu__item">
+              <button class="context-menu__button context__button-common" type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#key"></use>
+                </svg>
+                <span class="context-menu__text">권한설정</span>
+              </button>
+            </li>
+            <li class="context-menu__item">
+              <button class="context-menu__button context__button-common" type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#user-setting"></use>
+                </svg>
+                <span class="context-menu__text">소유자 설정</span>
+              </button>
+            </li>
+            <li class="context-menu__item context-menu__item--selected">
+              <button class="context-menu__button context__button-export " type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#url-export"></use>
+                </svg>
+                <span class="context-menu__text">내보내기 링크</span>
+              </button>
+            </li>
+            <li class="context-menu__item context-menu__item--disabled">
+              <button class="context-menu__button context__button-change" type="button" disabled="disabled">
+                <svg class="svg-icon context-menu__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32">
+                  <path fill-rule="evenodd" d="M19.793 4.293a1 1 0 011.414 0l6.5 6.5a1 1 0 010 1.414l-15.5 15.5A1 1 0 0111.5 28H5a1 1 0 01-1-1v-6.5a1 1 0 01.293-.707l15.5-15.5zM6 20.914V26h5.086l14.5-14.5L20.5 6.414 6 20.914z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd" d="M17.293 7.793a1 1 0 011.414 0l6.5 6.5a1 1 0 01.255.432l1 3.5a1 1 0 01-.255.982l-4.5 4.5a1 1 0 01-1.414-1.414l4.084-4.084-.767-2.685-6.317-6.317a1 1 0 010-1.414zM4.822 19.765a1 1 0 011.413.057l6 6.5a1 1 0 01-1.47 1.356l-6-6.5a1 1 0 01.057-1.413z" clip-rule="evenodd" />
+                </svg>
+                <span class="context-menu__text">
+                  정보 변경
+                </span>
+              </button>
+            </li>
+            <li class="context-menu__item">
+              <button class="context-menu__button context__button-common" type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#write"></use>
+                </svg>
+                <span class="context-menu__text">편집</span>
+              </button>
+            </li>
+            <li class="context-menu__item">
+              <button class="context-menu__button context__button-common" type="button">
+                <svg class="svg-icon context-menu-icon" aria-hidden="true">
+                  <use xlink:href="#copy"></use>
+                </svg>
+                <span class="context-menu__text">복제</span>
+              </button>
+            </li>
+            <li class="context-menu__item">
+              <button class="context-menu__button context__button-common" type="button">
+                <svg class="svg-icon context-menu__icon" aria-hidden="true">
+                  <use xlink:href="#trash"></use>
+                </svg>
+                <span class="context-menu__text">삭제</span>
+              </button>
+            </li>
+          </ul>
         </div>
 
-        <script src="../dist/js/main.bundle.js"></script>
-    </body>
+        <div class="section__export-modal">
+          <!--2번째-->
+          <div class="modal export-modal" role="dialog" aria-modal="true">
+            <div class="modal__head export-modal__head">
+              <div class="modal__head-title">
+                <span class="modal__head-title-text">내보내기 링크</span>
+              </div>
+              <div class="modal__head-close-button">
+                <button class="button button--icon button--link button--sm" title="닫기">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#close"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="modal__body export-modal__body">
+              <div class="export-modal__toggle-box">
+                <div class="export-modal__toggle">
+                  <span class="toggle-text">공유</span>
+                  <button class="toggle-switch__switch toggle-switch__switch--selected" type="button" aria-selected="true">
+                    <span class="toggle-switch__handle">
+                      <span class="ir-pm"></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="export-modal__link-container">
+                <div class="export-modal__link-box">
+                  <strong class="link-box__title">유기케이스 투기 과열지구</strong>
+                  <div class="link-box__content">
+                    <div class="badge badge--sm badge--teal link-box__badge">
+                      <span class="badge__label">기본링크</span>
+                    </div>
+                    <a class="badge-link" href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
+                  </div>
+                  <div class="link-box__content--cyan">
+                    <div class="badge badge--sm badge--cyan link-box__badge--cyan">
+                      <span class="badge__label">고정링크</span>
+                    </div>
+                    <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
+                  </div>
+                </div>
+                <div class="export-modal__link-box">
+                  <strong class="link-box__title">유기케이스 투기 과열지구</strong>
+                  <div class="link-box__content">
+                    <div class="badge badge--sm badge--teal link-box__badge">
+                      <span class="badge__label">기본링크</span>
+                    </div>
+                    <a class="badge-link" href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
+                  </div>
+                  <div class="link-box__content--cyan">
+                    <div class="badge badge--sm badge--cyan link-box__badge--cyan">
+                      <span class="badge__label">고정링크</span>
+                    </div>
+                    <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
+                  </div>
+                </div>
+                <div class="export-modal__link-box">
+                  <strong class="link-box__title">유기케이스 투기 과열지구</strong>
+                  <div class="link-box__content">
+                    <div class="badge badge--sm badge--teal link-box__badge">
+                      <span class="badge__label">기본링크</span>
+                    </div>
+                    <a class="badge-link" href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
+                  </div>
+                  <div class="link-box__content--cyan">
+                    <div class="badge badge--sm badge--cyan link-box__badge--cyan">
+                      <span class="badge__label">고정링크</span>
+                    </div>
+                    <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
+                  </div>
+                </div>
+              </div>
+              <div class="export-modal__help-container">
+                <div class="export-modal__help-box">
+                  <svg class="svg-icon export-modal__help-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 32 32">
+                    <path d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z" />
+                    <path fill-rule="evenodd" d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z" clip-rule="evenodd" />
+                  </svg>
+                  <p class="export-modal__help-text">*링크를 클릭하면 클릭보드에 복사됩니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal__foot export-modal__foot">
+              <div class="modal__foot-buttons">
+                <button class="button button--primary button--lg" type="button">
+                  <span>닫기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__export-modal--sm">
+          <!--3번째-->
+          <div class="modal export-modal" role="dialog" aria-modal="true">
+            <div class="modal__head">
+              <div class="modal__head-title">
+                <span class="modal__head-title-text">내보내기 링크</span>
+              </div>
+              <div class="modal__head-close-button">
+                <button class="button button--icon button--link button--sm" title="닫기">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#close"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="modal__body export-modal__body">
+              <div class="export-modal__toggle-box">
+                <div class="export-modal__toggle">
+                  <span class="toggle-text">공유</span>
+                  <button class="toggle-switch__switch toggle-switch__switch--selected" type="button" aria-selected="true">
+                    <span class="toggle-switch__handle">
+                      <span class="ir-pm"></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="modal__body__link-container">
+                <div class="export-modal__link-box">
+                  <strong class="link-box__title">유기케이스 투기 과열지구</strong>
+                  <div class="link-box__content">
+                    <div class="badge badge--sm badge--teal link-box__badge">
+                      <span class="badge__label">기본링크</span>
+                    </div>
+                    <a class="badge-link" href="#">http://b-iris.mobigen.com/studio/exported/root/유즈케이스</a>
+                  </div>
+                  <div class="link-box__content--cyan">
+                    <div class="badge badge--sm badge--cyan link-box__badge--cyan">
+                      <span class="badge__label">고정링크</span>
+                    </div>
+                    <a class="badge--cyan-link" href="#">http://b-iris.mobigen.com/studio/exported/root/1234567890123567890123567890123</a>
+                  </div>
+                </div>
+              </div>
+              <div class="export-modal__help-container">
+                <div class="export-modal__help-box">
+                  <svg class="svg-icon export-modal__help-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 32 32">
+                    <path d="M17.4 24.4h-2.8v-2.8h2.8v2.8zM10.4 13.2c0-3.094 2.506-5.6 5.6-5.6s5.6 2.506 5.6 5.6c0 1.796-1.106 2.763-2.183 3.704-1.021.893-2.017 1.762-2.017 3.296h-2.8c0-2.55 1.32-3.56 2.479-4.45.91-.697 1.721-1.32 1.721-2.55 0-1.54-1.26-2.8-2.8-2.8-1.54 0-2.8 1.26-2.8 2.8h-2.8z" />
+                    <path fill-rule="evenodd" d="M30 16c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14zm-2 0c0 6.627-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4s12 5.373 12 12z" clip-rule="evenodd" />
+                  </svg>
+                  <p class="export-modal__help-text">*링크를 클릭하면 클릭보드에 복사됩니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal__foot export-modal__foot">
+              <div class="modal__foot-buttons">
+                <button class="button button--primary button--lg" type="button">
+                  <span>닫기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+  <script src="../dist/js/main.bundle.js"></script>
+</body>
 
 </html>

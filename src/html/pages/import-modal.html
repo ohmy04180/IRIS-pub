@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>report-modal</title>
+  <link rel="stylesheet" href="../dist/css/style.min.css" />
+</head>
+
+<body class="background">
+  <div class="modal-container">
+    <h2 class="modal-name">보고서 가져오기 모달</h2>
+    <div class="modal import-modal">
+      <div class="modal__head import-modal__head">
+        <div class="modal__head-title import-modal__head-title">
+          <span class="head-title-text">보고서 가져오기 </span>
+          <div class="steps">
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">1</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">파일선택</span>
+              </div>
+            </div>
+            <div class="steps__item steps__item--current">
+              <div class="steps__icon">
+                <span class="steps__icon-text">2</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">설정</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">3</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">요약</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">4</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">실행</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">5</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--import-modal__head-title-->
+      <div class="tab tab--horizontal" role="tablist" aria-label="Sample Tabs">
+        <ul class="tab__bar">
+          <li class="tab__item tab__item--selected">
+            <button type="button" class="tab__button " role="tab" aria-selected="true">
+              <span class="tab__button-text">보고서(100개 중 중복 4개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button " role="tab" aria-selected="false">
+              <span class="tab__button-text">데이터모델(50개 중복 5개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button" role="tab" aria-selected="false">
+              <span class="tab__button-text">연결정보(50개 중복 4개)</span>
+            </button>
+          </li>
+        </ul>
+        <div class="tab__contents tab__contents--active import-modal__contents">
+          <div class="toggle-button toggle__button-list" role="radiogroup">
+            <button class="toggle-button__item button-list__item toggle-button__item--selected" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">전체보기</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID+이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">미중복</span>
+            </button>
+          </div>
+          <div class="list-filter">
+            <div class="list-filter__checkbox">
+              <input id="filter-check" type="checkbox" class="checkbox__input" value="label">
+              <label for="filter-check" class="checkbox__label">
+                <svg class="svg-icon list__icon" aria-hidden="true">
+                  <use xlink:href="#filter"></use>
+                </svg>
+                <span class="list__text list-filter__text">전체 100개 </span>
+                <span class="list__text list-filter__text">중 검색결과 1개</span>
+              </label>
+            </div>
+            <div class="list-filter__searchbox">
+              <div class="select filter-select" role="select">
+                <div class="select-selector" aria-expanded="false" aria-controls="select-01">
+                  <button class="select-selector__button" type="button">
+                    <span class="select-selector__title">전체</span>
+                    <svg class="svg-icon select-selector__icon" aria-hidden="true">
+                      <use xlink:href="#chevron-down-medium"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="select-container" id="select-01" aria-haspopup="true">
+                  <ul class="select-container__list">
+                    <li class="select-container__item--top">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text--all">전체 카테고리</span>
+                      </button>
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">카테고리 없음</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filter-search">
+                <div class="text-input-group">
+                  <span class="text-input-group__icon">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </span>
+                  <input type="text" class="text-input" placeholder="검색어를 입력해주세요">
+                  <button class="text-input-group__clear-button" title="텍스트 삭제">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#close"></use>
+                    </svg>
+                  </button>
+                </div>
+                <button class="transfer-list__head-toolbar-button button button--tertiary">
+                  <span class="button__text">
+                    검색
+                  </span>
+                </button>
+              </div>
+              <div class="filter-icon">
+                <button title="icon-button" class="button button--icon button--tertiary" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#filter-reset"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <table class="table table--primary">
+            <colgroup>
+              <col width="40px">
+              <col width="130px">
+              <col>
+              <col width="120px">
+              <col width="160px">
+              <col width="100px">
+              <col width="100px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>선택</th>
+                <th>카테고리</th>
+                <th>보고서 이름</th>
+                <th>소유자</th>
+                <th>중복여부</th>
+                <th>접근권한</th>
+                <th>가져오기</th>
+              </tr>
+            </thead>
+            <tbody class="table__filter-result">
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-01" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-01" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-02" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-02" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-03" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-03" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-04" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-04" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-05" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-05" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-06" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-06" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-07" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-07" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-08" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-08" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-09" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-09" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-10" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-10" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="exclude-checkbox">
+            <input id="exclude-check" type="checkbox" class="checkbox__input" value="label">
+            <label for="exclude-check" class="checkbox__label">
+              <span>가져오기 제외 건 보기</span>
+          </div>
+        </div>
+        <!--tab__contents-->
+      </div>
+      <div class="modal__foot">
+        <button class="button button--link button--lg" type="button">
+          <span>취소</span>
+        </button>
+        <button class="button button--danger button--lg" type="button">
+          <span>전체 변경 정보 초기화</span>
+        </button>
+        <div class="modal__foot-main-buttons">
+          <button class="button button--support button--lg" type="button">
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-left-medium"></use>
+            </svg>
+            <span>이전</span>
+          </button>
+          <button class="button button--primary button--lg" type="button">
+            <span>요약 확인</span>
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-right-medium"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-container">
+    <h2 class="modal-name">보고서 업로드 모달</h2>
+    <div class="modal import-modal">
+      <div class="modal__head import-modal__head">
+        <div class="modal__head-title import-modal__head-title">
+          <span class="head-title-text">보고서 가져오기 </span>
+          <div class="steps">
+            <div class="steps__item steps__item--current">
+              <div class="steps__icon">
+                <span class="steps__icon-text">1</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">파일선택</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">2</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">설정</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">3</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">요약</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">4</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">실행</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">5</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__body modal__body--sm">
+        <div class="upload-drag upload-drag">
+          <svg class="svg-icon upload-drag__icon" aria-hidden="true">
+            <use xlink:href="#upload"></use>
+          </svg>
+
+          <div class="upload-drag__description">
+            <p class="upload-drag__description-text">
+              보고서 파일을 여기로 드래그 합니다.<br>
+              <span class="upload-drag__description-file-type">json 파일을 선택하세요.<br></span>
+              or
+            </p>
+          </div>
+          <div class="upload-drag__file">
+            <input type="file" class="upload-drag__file-input">
+            <label class="upload-drag__file-label">
+              <span class="upload-drag__file-text"> 보고서 선택 </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button class="button button--link button--lg" type="button">
+          <span>취소</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-container">
+    <h2 class="modal-name">체크박스 클릭했을때의 모달</h2>
+    <div class="modal import-modal">
+      <div class="modal__head import-modal__head">
+        <div class="modal__head-title import-modal__head-title">
+          <span class="head-title-text">보고서 가져오기 </span>
+          <div class="steps">
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">1</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">파일선택</span>
+              </div>
+            </div>
+            <div class="steps__item steps__item--current">
+              <div class="steps__icon">
+                <span class="steps__icon-text">2</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">설정</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">3</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">요약</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">4</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">실행</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">5</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--import-modal__head-title-->
+      <div class="tab tab--horizontal" role="tablist" aria-label="Sample Tabs">
+        <ul class="tab__bar">
+          <li class="tab__item tab__item--selected">
+            <button type="button" class="tab__button " role="tab" aria-selected="true">
+              <span class="tab__button-text">보고서(100개 중 중복 4개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button " role="tab" aria-selected="false">
+              <span class="tab__button-text">데이터모델(50개 중복 5개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button" role="tab" aria-selected="false">
+              <span class="tab__button-text">연결정보(50개 중복 4개)</span>
+            </button>
+          </li>
+        </ul>
+        <div class="tab__contents tab__contents--active import-modal__contents">
+          <div class="toggle-button toggle__button-list" role="radiogroup">
+            <button class="toggle-button__item button-list__item toggle-button__item--selected" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">전체보기</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID+이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">미중복</span>
+            </button>
+          </div>
+          <div class="list-filter">
+            <div class="list-filter__checkbox checkbox--indeterminate">
+              <input id="filter-check2" type="checkbox" class="checkbox__input" value="label">
+              <label for="filter-check2" class="checkbox__label">
+                <svg class="svg-icon list__icon" aria-hidden="true">
+                  <use xlink:href="#filter"></use>
+                </svg>
+                <span class="list__text list-filter__text">전체 100개 </span>
+                <span class="list__text list-filter__text">중 검색결과 1개</span>
+              </label>
+
+              <div class="checkbox__after-buttons">
+                <span class="list-filter__text list-filter__text--checked">2개 선택됨</span>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#custom-tune"></use>
+                  </svg>
+                  <span class="button__text">카테고리설정</span>
+                </button>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#user-setting"></use>
+                  </svg>
+                  <span class="button__text">소유자설정</span>
+                </button>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#key"></use>
+                  </svg>
+                  <span class="button__text">접근권한</span>
+                </button>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#download"></use>
+                  </svg>
+                  <span class="button__text">가져오기설정</span>
+                </button>
+              </div>
+            </div>
+            <div class="list-filter__searchbox">
+              <div class="select filter-select" role="select">
+                <div class="select-selector" aria-expanded="false" aria-controls="select-01">
+                  <button class="select-selector__button" type="button">
+                    <span class="select-selector__title">전체</span>
+                    <svg class="svg-icon select-selector__icon" aria-hidden="true">
+                      <use xlink:href="#chevron-down-medium"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="select-container" id="select-01" aria-haspopup="true">
+                  <ul class="select-container__list">
+                    <li class="select-container__item--top">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text--all">전체 카테고리</span>
+                      </button>
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">카테고리 없음</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filter-search">
+                <div class="text-input-group">
+                  <span class="text-input-group__icon">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </span>
+                  <input type="text" class="text-input" placeholder="검색어를 입력해주세요">
+                  <button class="text-input-group__clear-button" title="텍스트 삭제">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#close"></use>
+                    </svg>
+                  </button>
+                </div>
+                <button class="transfer-list__head-toolbar-button button button--tertiary">
+                  <span class="button__text">
+                    검색
+                  </span>
+                </button>
+              </div>
+              <div class="filter-icon">
+                <button title="icon-button" class="button button--icon button--tertiary" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#filter-reset"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <table class="table table--primary">
+            <colgroup>
+              <col width="40px">
+              <col width="130px">
+              <col>
+              <col width="120px">
+              <col width="160px">
+              <col width="100px">
+              <col width="100px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>선택</th>
+                <th>카테고리</th>
+                <th>보고서 이름</th>
+                <th>소유자</th>
+                <th>중복여부</th>
+                <th>접근권한</th>
+                <th>가져오기</th>
+              </tr>
+            </thead>
+            <tbody class="table__filter-result">
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-01-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-01-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-02-2" type="checkbox" class="checkbox__input" value="label" checked>
+                  <label for="list-check-02-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-03-2" type="checkbox" class="checkbox__input" value="label" checked>
+                  <label for="list-check-03-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-04-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-04-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-05-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-05-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-06-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-06-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-07-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-07-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-08-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-08-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-09-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-09-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-10-2" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-10-2" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="exclude-checkbox">
+            <input id="exclude-check2" type="checkbox" class="checkbox__input" value="label">
+            <label for="exclude-check2" class="checkbox__label">
+              <span>가져오기 제외 건 보기</span>
+          </div>
+        </div>
+        <!--tab__contents-->
+      </div>
+      <div class="modal__foot">
+        <button class="button button--link button--lg" type="button">
+          <span>취소</span>
+        </button>
+        <button class="button button--danger button--lg" type="button">
+          <span>전체 변경 정보 초기화</span>
+        </button>
+        <div class="modal__foot-main-buttons">
+          <button class="button button--support button--lg" type="button">
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-left-medium"></use>
+            </svg>
+            <span>이전</span>
+          </button>
+          <button class="button button--primary button--lg" type="button">
+            <span>요약 확인</span>
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-right-medium"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal category-modal" role="dialog" aria-modal="true">
+      <div class="modal__head">
+        <div class="modal__head-title">
+          <span class="modal__head-title-text">카테고리 설정</span>
+        </div>
+        <div class="modal__head-close-button">
+          <button class="button button--icon button--link button--sm" title="닫기">
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal__body modal__body--sm category-modal__body">
+        <p class="category-modal__text">카테고리</p>
+        <div class="select select--lg category-modal__select" role="select">
+          <div class="select-selector" aria-expanded="false" aria-controls="select-01">
+            <button class="select-selector__button" type="button">
+              <span class="select-selector__title">미지정</span>
+              <svg class="svg-icon select-selector__icon" aria-hidden="true">
+                <use xlink:href="#chevron-down-medium"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="select-container" id="select-02" aria-haspopup="true">
+            <ul class="select-container__list">
+              <li class="select-container__item">
+                <button class="select-container__button" type="button" role="option">
+                  <span class="select-container__text">카테고리 이름</span>
+                </button>
+              </li>
+              <li class="select-container__item">
+                <button class="select-container__button" type="button" role="option">
+                  <span class="select-container__text">카테고리 이름</span>
+                </button>
+              </li>
+              <li class="select-container__item">
+                <button class="select-container__button" type="button" role="option">
+                  <span class="select-container__text">카테고리 이름</span>
+                </button>
+              </li>
+              <li class="select-container__item">
+                <button class="select-container__button" type="button" role="option">
+                  <span class="select-container__text">카테고리 이름</span>
+                </button>
+              </li>
+              <li class="select-container__item">
+                <button class="select-container__button" type="button" role="option">
+                  <span class="select-container__text">카테고리 이름</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <div class="modal__foot-main-buttons">
+          <button class="button button--link button--lg" type="button">
+            <span>취소</span>
+          </button>
+          <button class="button button--primary button--lg" type="button">
+            <span>저장</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-container">
+    <h2 class="modal-name">테이블 내에 텍스트변경을 위한 인풋 모달</h2>
+    <div class="modal import-modal">
+      <div class="modal__head import-modal__head">
+        <div class="modal__head-title import-modal__head-title">
+          <span class="head-title-text">보고서 가져오기 </span>
+          <div class="steps">
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">1</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">파일선택</span>
+              </div>
+            </div>
+            <div class="steps__item steps__item--current">
+              <div class="steps__icon">
+                <span class="steps__icon-text">2</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">설정</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">3</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">요약</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">4</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">실행</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">5</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--import-modal__head-title-->
+      <div class="tab tab--horizontal" role="tablist" aria-label="Sample Tabs">
+        <ul class="tab__bar">
+          <li class="tab__item tab__item--selected">
+            <button type="button" class="tab__button " role="tab" aria-selected="true">
+              <span class="tab__button-text">보고서(100개 중 중복 4개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button " role="tab" aria-selected="false">
+              <span class="tab__button-text">데이터모델(50개 중복 5개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button" role="tab" aria-selected="false">
+              <span class="tab__button-text">연결정보(50개 중복 4개)</span>
+            </button>
+          </li>
+        </ul>
+        <div class="tab__contents tab__contents--active import-modal__contents">
+          <div class="toggle-button toggle__button-list" role="radiogroup">
+            <button class="toggle-button__item button-list__item toggle-button__item--selected" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">전체보기</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID+이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">미중복</span>
+            </button>
+          </div>
+          <div class="list-filter">
+            <div class="list-filter__checkbox checkbox--indeterminate">
+              <input id="filter-check3" type="checkbox" class="checkbox__input" value="label">
+              <label for="filter-check3" class="checkbox__label">
+                <svg class=" svg-icon list__icon" aria-hidden="true">
+                  <use xlink:href="#filter"></use>
+                </svg>
+                <span class="list__text list-filter__text">전체 100개 </span>
+                <span class="list__text list-filter__text">중 검색결과 1개</span>
+              </label>
+
+              <div class="checkbox__after-buttons">
+                <span class="list-filter__text list-filter__text--checked">2개 선택됨</span>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#custom-tune"></use>
+                  </svg>
+                  <span class="button__text">카테고리설정</span>
+                </button>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#user-setting"></use>
+                  </svg>
+                  <span class="button__text">소유자설정</span>
+                </button>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#key"></use>
+                  </svg>
+                  <span class="button__text">접근권한</span>
+                </button>
+                <button class="button button--tertiary button--sm after-button" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#download"></use>
+                  </svg>
+                  <span class="button__text">가져오기설정</span>
+                </button>
+              </div>
+            </div>
+            <div class="list-filter__searchbox">
+              <div class="select filter-select" role="select">
+                <div class="select-selector" aria-expanded="false" aria-controls="select-01">
+                  <button class="select-selector__button" type="button">
+                    <span class="select-selector__title">전체</span>
+                    <svg class="svg-icon select-selector__icon" aria-hidden="true">
+                      <use xlink:href="#chevron-down-medium"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="select-container" id="select-01" aria-haspopup="true">
+                  <ul class="select-container__list">
+                    <li class="select-container__item--top">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text--all">전체 카테고리</span>
+                      </button>
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">카테고리 없음</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filter-search">
+                <div class="text-input-group">
+                  <span class="text-input-group__icon">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </span>
+                  <input type="text" class="text-input" placeholder="검색어를 입력해주세요">
+                  <button class="text-input-group__clear-button" title="텍스트 삭제">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#close"></use>
+                    </svg>
+                  </button>
+                </div>
+                <button class="transfer-list__head-toolbar-button button button--tertiary">
+                  <span class="button__text">
+                    검색
+                  </span>
+                </button>
+              </div>
+              <div class="filter-icon">
+                <button title="icon-button" class="button button--icon button--tertiary" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#filter-reset"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <table class="table table--primary">
+            <colgroup>
+              <col width="40px">
+              <col width="170px">
+              <col>
+              <col width="120px">
+              <col width="160px">
+              <col width="100px">
+              <col width="100px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>선택</th>
+                <th>카테고리</th>
+                <th>보고서 이름</th>
+                <th>소유자</th>
+                <th>중복여부</th>
+                <th>접근권한</th>
+                <th>가져오기</th>
+              </tr>
+            </thead>
+            <tbody class="table__filter-result">
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-01-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-01-3" class="checkbox__label"></label>
+                </td>
+                <td style="font-size: 14px;">국토교통부_유즈케이스</td>
+                <td> 삼성전자 일별 주가 데이터 (2020.05.11 ~ 2021.05.11)</td>
+                <td>mobigen_bis</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-02-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-02-3" class="checkbox__label"></label>
+                </td>
+                <td>QA</td>
+                <td>테스트_FUSION_DASHBOARD_02_GIS</td>
+                <td>test_id</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-03-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-03-3" class="checkbox__label"></label>
+                </td>
+                <td>갤러리</td>
+                <td>Studio보고서샘플COVID19 발생 현황 대시보드(질병관리본부)</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item tr--selected">
+                <td class="td--text-center">
+                  <input id="list-check-04-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-04-3" class="checkbox__label"></label>
+                </td>
+                <td>IRIS-Cloud</td>
+                <td class="td--text-hover">
+                  <span>유즈케이스_실거래신고 이상 의심 지역 분석</span>
+                  <button title="icon-button" class="button button--icon button--underline button--sm modify-icon" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#pen"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-05-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-05-3" class="checkbox__label"></label>
+                </td>
+                <td>서비스품질검토용</td>
+                <td>
+                  <div class="table__modify--empty">
+                    <div class="text-modify">
+                      <input type="text" id="inp-01" class="text-input" placeholder="보고서 이름">
+                      <button title="icon-button" class="button button--icon button--underline button--sm" type="button">
+                        <svg class="svg-icon" aria-hidden="true">
+                          <use xlink:href="#checkmark"></use>
+                        </svg>
+                      </button>
+                      <button title="icon-button" class="button button--icon button--underline button--sm" type="button">
+                        <svg class="svg-icon" aria-hidden="true">
+                          <use xlink:href="#close"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="notification-message notification-message--error">
+                      <svg class="notification-message__icon svg-icon" aria-hidden="true">
+                        <use xlink:href="#issue-fill"></use>
+                      </svg>
+                      <span class="notification-message__text">보고서 이름을 반드시 입력하세요.</span>
+                    </div>
+                  </div>
+                </td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-06-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-06-3" class="checkbox__label"></label>
+                </td>
+                <td>국토교통부_테스트</td>
+                <td>조달정보서비스_대시보드_입찰공고 URL_v0.1</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-07-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-07-3" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-08-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-08-3" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-09-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-09-3" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--link table-button" type="button" disabled="disabled">
+                    해당없음
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-10-3" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-10-3" class="checkbox__label"></label>
+                </td>
+                <td>미지정</td>
+                <td>보고서 이름</td>
+                <td>수행자 ID</td>
+                <td class="td--text-center">ID+이름+소유자 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="exclude-checkbox">
+            <input id="exclude-check3" type="checkbox" class="checkbox__input" value="label">
+            <label for="exclude-check3" class="checkbox__label">
+              <span>가져오기 제외 건 보기</span>
+          </div>
+        </div>
+        <!--tab__contents-->
+      </div>
+      <div class="modal__foot">
+        <button class="button button--link button--lg" type="button">
+          <span>취소</span>
+        </button>
+        <button class="button button--danger button--lg" type="button">
+          <span>전체 변경 정보 초기화</span>
+        </button>
+        <div class="modal__foot-main-buttons">
+          <button class="button button--support button--lg" type="button">
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-left-medium"></use>
+            </svg>
+            <span>이전</span>
+          </button>
+          <button class="button button--primary button--lg" type="button">
+            <span>요약 확인</span>
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-right-medium"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert--warning remove-alert" role="alertdialog" aria-modal="true">
+      <div class="alert__body">
+        <svg class="alert__icon svg-icon" aria-hidden="true">
+          <use xlink:href="#warning-fill"></use>
+        </svg>
+        <div class="alert__contents">
+          <p class="remove-alert__title">변경 정보 초기화</p>
+          <p class="alert__text">변경된 정보를 모두 초기화 하시겠습니까?</p>
+        </div>
+      </div>
+      <div class="alert__foot">
+        <div class="alert__foot-main-buttons">
+          <button class="button button--link button--lg" type="button">
+            <span>취소</span>
+          </button>
+          <button class="button button--negative button--lg" type="button">
+            <span>확인</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-container">
+    <h2 class="modal-name">테이블 안내 툴팁 모달</h2>
+    <div class="modal import-modal">
+      <div class="modal__head import-modal__head">
+        <div class="modal__head-title import-modal__head-title">
+          <span class="head-title-text">보고서 가져오기 </span>
+          <div class="steps">
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">1</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">파일선택</span>
+              </div>
+            </div>
+            <div class="steps__item steps__item--current">
+              <div class="steps__icon">
+                <span class="steps__icon-text">2</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">설정</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">3</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">요약</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">4</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">실행</span>
+              </div>
+            </div>
+            <div class="steps__item">
+              <div class="steps__icon">
+                <span class="steps__icon-text">5</span>
+              </div>
+              <div class="steps__title">
+                <span class="steps__title-text">완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--import-modal__head-title-->
+      <div class="tab tab--horizontal" role="tablist" aria-label="Sample Tabs">
+        <ul class="tab__bar">
+          <li class="tab__item">
+            <button type="button" class="tab__button " role="tab" aria-selected="false">
+              <span class="tab__button-text">보고서(100개 중 중복 4개)</span>
+            </button>
+          </li>
+          <li class="tab__item tab__item--selected">
+            <button type="button" class="tab__button " role="tab" aria-selected="true">
+              <span class="tab__button-text">데이터모델(50개 중복 5개)</span>
+            </button>
+          </li>
+          <li class="tab__item">
+            <button type="button" class="tab__button" role="tab" aria-selected="false">
+              <span class="tab__button-text">연결정보(50개 중복 4개)</span>
+            </button>
+          </li>
+        </ul>
+        <div class="tab__contents tab__contents--active import-modal__contents">
+          <div class="toggle-button toggle__button-list" role="radiogroup">
+            <button class="toggle-button__item button-list__item toggle-button__item--selected" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">전체보기</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">ID+이름+소유자 중복</span>
+            </button>
+            <button class="toggle-button__item button-list__item" type="button" role="radio" aria-checked="false" aria-labelledby="radio1">
+              <span class="toggle-button__text">미중복</span>
+            </button>
+          </div>
+          <div class="list-filter">
+            <div class="list-filter__checkbox">
+              <input id="filter-check4" type="checkbox" class="checkbox__input" value="label">
+              <label for="filter-check4" class="checkbox__label">
+                <svg class="svg-icon list__icon" aria-hidden="true">
+                  <use xlink:href="#filter"></use>
+                </svg>
+                <span class="list__text list-filter__text">전체 100개 </span>
+                <span class="list__text list-filter__text">중 검색결과 1개</span>
+              </label>
+            </div>
+            <div class="list-filter__searchbox">
+              <div class="select filter-select" role="select">
+                <div class="select-selector" aria-expanded="false" aria-controls="select-01">
+                  <button class="select-selector__button" type="button">
+                    <span class="select-selector__title">전체</span>
+                    <svg class="svg-icon select-selector__icon" aria-hidden="true">
+                      <use xlink:href="#chevron-down-medium"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="select-container" id="select-01" aria-haspopup="true">
+                  <ul class="select-container__list">
+                    <li class="select-container__item--top">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text--all">전체 카테고리</span>
+                      </button>
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">카테고리 없음</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button " type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                    <li class="select-container__item">
+                      <button class="select-container__button" type="button" role="option">
+                        <span class="select-container__text">보고서 카테고리네임</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filter-search">
+                <div class="text-input-group">
+                  <span class="text-input-group__icon">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </span>
+                  <input type="text" class="text-input" placeholder="검색어를 입력해주세요">
+                  <button class="text-input-group__clear-button" title="텍스트 삭제">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#close"></use>
+                    </svg>
+                  </button>
+                </div>
+                <button class="transfer-list__head-toolbar-button button button--tertiary">
+                  <span class="button__text">
+                    검색
+                  </span>
+                </button>
+              </div>
+              <div class="filter-icon">
+                <button title="icon-button" class="button button--icon button--tertiary" type="button">
+                  <svg class="svg-icon" aria-hidden="true">
+                    <use xlink:href="#filter-reset"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <table class="table table--primary">
+            <colgroup>
+              <col width="40px">
+              <col width="130px">
+              <col>
+              <col width="100px">
+              <col width="120px">
+              <col width="160px">
+              <col width="100px">
+              <col width="100px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>선택</th>
+                <th>유형</th>
+                <th>데이터모델 이름</th>
+                <th>데이터 유형</th>
+                <th>소유자</th>
+                <th>중복여부</th>
+                <th>접근권한</th>
+                <th>가져오기</th>
+              </tr>
+            </thead>
+            <tbody class="table__filter-result">
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-01-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-01-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-02-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-02-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">VIEW</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">ID+이름 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-03-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-03-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-04-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-04-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">VIEW</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">ID+이름 중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    새로저장
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center checkbox--disabled">
+                  <input id="list-check-05-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-05-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="td--text-center import-help ">
+                  <span>불가</span>
+                  <div class="import-help__hoverbox">
+                    <div class="tooltip-studio tooltip-studio--top-right import-help__tooltip" role="tooltip">
+                      <span class="tooltip-studio__arrow"></span>
+                      <div class="tooltip-studio__inner">
+                        <span class="tooltip-studio__text help__tooltip-text">
+                          가져오기 불가능한 데이터 모델입니다.<br>
+                          가져오기 진행 시 자동 제외하며 <br>
+                          건너뛰기 처리됩니다.
+                        </span>
+                      </div>
+                    </div>
+                    <button title="icon-button" class="button button--icon button--link button--sm" type="button">
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use xlink:href="#help-fill"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-06-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-06-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center checkbox--disabled">
+                  <input id="list-check-07-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-07-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="td--text-center import-help ">
+                  <span>불가</span>
+                  <div class="import-help__hoverbox">
+                    <div class="tooltip-studio tooltip-studio--top-right import-help__tooltip" role="tooltip">
+                      <span class="tooltip-studio__arrow"></span>
+                      <div class="tooltip-studio__inner">
+                        <span class="tooltip-studio__text help__tooltip-text">
+                          가져오기 불가능한 데이터 모델입니다.<br>
+                          가져오기 진행 시 자동 제외하며 <br>
+                          건너뛰기 처리됩니다.
+                        </span>
+                      </div>
+                    </div>
+                    <button title="icon-button" class="button button--icon button--link button--sm" type="button">
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use xlink:href="#help-fill"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-08-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-08-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+
+              <tr class="filter-result__item">
+                <td class="td--text-center checkbox--disabled">
+                  <input id="list-check-09-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-09-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="td--text-center import-help">
+                  <span>불가</span>
+                  <div class="import-help__hoverbox">
+                    <div class="tooltip-studio tooltip-studio--top-right import-help__tooltip" role="tooltip">
+                      <span class="tooltip-studio__arrow"></span>
+                      <div class="tooltip-studio__inner">
+                        <span class="tooltip-studio__text help__tooltip-text">
+                          가져오기 불가능한 데이터 모델입니다.<br>
+                          가져오기 진행 시 자동 제외하며 <br>
+                          건너뛰기 처리됩니다.
+                        </span>
+                      </div>
+                    </div>
+                    <button title="icon-button" class="button button--icon button--link button--sm" type="button">
+                      <svg class="svg-icon" aria-hidden="true">
+                        <use xlink:href="#help-fill"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="filter-result__item">
+                <td class="td--text-center">
+                  <input id="list-check-10-4" type="checkbox" class="checkbox__input" value="label">
+                  <label for="list-check-10-4" class="checkbox__label"></label>
+                </td>
+                <td class="td--text-center">데이터모델</td>
+                <td>데이터모델 이름</td>
+                <td class="td--text-center">HDFS</td>
+                <td>소유자 ID</td>
+                <td class="td--text-center">미중복</td>
+                <td>
+                  <button title="icon-button" class="button button--icon button--link button--sm table-button" type="button">
+                    <svg class="svg-icon" aria-hidden="true">
+                      <use xlink:href="#key"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td>
+                  <button class="button button--underline table-button" type="button">
+                    덮어쓰기
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="exclude-checkbox">
+            <input id="exclude-check4" type="checkbox" class="checkbox__input" value="label">
+            <label for="exclude-check4" class="checkbox__label">
+              <span>가져오기 제외 건 보기</span>
+          </div>
+        </div>
+        <!--tab__contents-->
+      </div>
+      <div class="modal__foot">
+        <button class="button button--link button--lg" type="button">
+          <span>취소</span>
+        </button>
+        <button class="button button--danger button--lg" type="button">
+          <span>전체 변경 정보 초기화</span>
+        </button>
+        <div class="modal__foot-main-buttons">
+          <button class="button button--support button--lg" type="button">
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-left-medium"></use>
+            </svg>
+            <span>이전</span>
+          </button>
+          <button class="button button--primary button--lg" type="button">
+            <span>요약 확인</span>
+            <svg class="svg-icon" aria-hidden="true">
+              <use xlink:href="#chevron-right-medium"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert--info check-alert" role="alertdialog" aria-modal="true">
+      <div class="alert__body">
+        <svg class="alert__icon svg-icon" aria-hidden="true">
+          <use xlink:href="#info-fill"></use>
+        </svg>
+        <div class="alert__contents">
+          <p class="remove-alert__title">중복 제외</p>
+          <p class="alert__text">데이터 모델 50개 중 ID 중복 1건,<br>
+            이름 중복 1건을 제외하시겠습니까?</p>
+        </div>
+      </div>
+      <div class="alert__foot">
+        <div class="alert__foot-main-buttons">
+          <button class="button button--link button--lg" type="button">
+            <span>취소</span>
+          </button>
+          <button class="button button--primary button--lg" type="button">
+            <span>확인</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../dist/js/main.bundle.js"></script>
+</body>
+
+</html>
